@@ -14,12 +14,77 @@
 
 		<meta name="mobile-web-app-capable" content="yes">
 	 	<meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<script type="text/javascript">
+			document.addEventListener("deviceready", onDeviceReady, false);
 
+			function onDeviceReady() {
+				var database = window.openDatabase("studentDB", "1.0", "Student Database", 200000);
+				database.transaction(populateDB, errorDB, successDB);
+				alert("phone gap has loaded");
+			}
+
+			function populateDB(tx){
+				tx.executeSql("DROP TABLE IF EXISTS spell");
+				tx.executeSql("CREATE TABLE IF NOT EXISTS spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard)");
+
+				tx.executeSql("INSERT INTO spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard) VALUES (1,'Abi-Dalzim''s Horrid Wilting','8th-level necromancy',8,'1 action','150 feet','V, S, M (a bit of sponge)','Instantaneous','You draw the moisture from every creature in a 30-foot cube centered on a point you choose within range. Each creature in that area must make a Constitution saving throw. Constructs and undead aren''t affected, and plants and water elementals make this saving throw with disadvantage. A creature takes 10d8 necrotic damage on a failed save, or half as much damage on a successful one.','-','ee 15',0,0,0,0,0,0,1,0,1)");
+			}
+
+			function errorDB(error){
+				navigator.notification.alert(error, null, "You have an error", "OK");
+			}
+
+			function successDB(){
+				navigator.notification.alert("Your DB has been created successfully", null, "Information", "OK");
+			}
+
+			function getRecords(){
+				database = window.openDatabase("studentDB", "1.0", "Student Database", 200000);
+				database.transaction(selectData, errorDB, successDB);
+			}
+
+			function selectData(tx){
+				tx.executeSql("SELECT * FROM spell",[], resultSuccess, resultError);
+			}
+
+			function resultSuccess(tx, response){
+				var dbOutput = document.getElementById("responseDiv");
+				var temp = "<table border='1'><tr><th>ID</th><th>Name</th><th>School</th><th>Level</th><th>Casting Time</th><th>Range</th></tr>";
+				alert(response.rows.length);
+				for(i=0; i<response.rows.length; i++){
+
+					temp += "<tr><td>" + response.rows.item(i)._id + "</td><td>" + response.rows.item(i).name + "</td><td>" + response.rows.item(i).school + "</td><td>" + response.rows.item(i).casting_time + "</td><td>" + response.rows.item(i).level + "</td><td>" + response.rows.item(i).range + "<td></tr>";
+					dbOutput.innerHTML = temp;
+				}
+			}
+
+			function resultError(error){
+				alert(error);
+			}
+
+			function deleteRecords(){
+				database = window.openDatabase("studentDB", "1.0", "Student Database", 200000);
+				database.transaction(deleteDB, errorDB, deleteSuccess);
+			}
+
+			function deleteDB(tx){
+				tx.executeSql("DROP TABLE IF EXISTS spell");
+				tx.executeSql("CREATE TABLE IF NOT EXISTS spell (_id,name,school,level,casting_time)");
+			}
+
+			function deleteSuccess(){
+				navigator.notification.alert("DB has been wiped", null, "Information", "OK");
+			}
+
+			function deleteError(error){
+				alert(error);
+			}
+		</script>
 	</head>
 	<body>
-
-		<div data-role="page">
+		<!-- start of the main page -->
+		<div data-role="page" id="main">
 
 			<nd2-include data-src="examples/fragments/panel.left.html"></nd2-include>
 
@@ -32,16 +97,83 @@
 				<a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay="0.8s"><i class="zmdi zmdi-menu"></i></a>
 				<h1 class="wow fadeIn" data-wow-delay="0.4s">D&D 5E Spellbook</h1>
 			</div>
-
 			<div role="main" class="ui-content" data-inset="false">
-				<ul data-role="listview">
-					<li><a href="#">All Spells</a></li>
-					<li><a href="#">Spellbooks</a></li>
-				</ul>
+				<div role="main" class="ui-content wow fadeInDown" data-inset="false">
+						<a href="#allSpells" data-role="button" data-icon="grid">All Spells</a>
+						<a href="#" data-role="button" data-icon="bullets">Spellbooks</a>
+						<a href="#" data-role="button" data-icon="gear">Settings</a>
+				</div>
+			</div>
+		</div>
+		<!-- main page -->
+
+		<!-- start of the all spells page -->
+		<div data-role="page" id="allSpells">
+
+			<nd2-include data-src="examples/fragments/panel.left.html"></nd2-include>
+
+			<div data-role="panel" id="bottomsheet" data-animate="false" data-position="bottom" data-display="overlay">
+				<nd2-include data-src="examples/fragments/bottom.sheet.html"></nd2-include>
 			</div>
 
-		</div>
+			<div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
+				<a href="#bottomsheet" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay="1.2s"><i class="zmdi zmdi-more-vert"></i></a>
+				<a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay="0.8s"><i class="zmdi zmdi-menu"></i></a>
+				<h1 class="wow fadeIn" data-wow-delay="0.4s">D&D 5E Spellbook</h1>
+			</div>
+			<div role="main" class="ui-content wow fadeInDown" data-inset="false">
+				<ul data-role="listview" data-mini="true">
+					<li data-role="list-divider" data-mini="true" data-theme="b">Sort by:</li>
+				</ul>
+					<div data-role="navbar" class="spellSortNav">
+						<ul>
+							<li class="spellSortNavLi"><a href="#">Level</a></li>
+							<li><a href="#">Name</a></li>
+							<li><a href="#">Damage</a></li>
+							<li><a href="#">Range</a></li>
+						</ul>
+					</div>
+				<hr id="belowSpellNavHR">
+				<div>
+		            <table border = "1">
+		                <tr>
+		                    <td colspan="2">
+		                        <h2>Student Registration</h2>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <th>First Name:</th>
+		                    <td>
+		                        <input type="text" name="firstName" id="firstName" value="">
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <th>Last Name:</th>
+		                    <td>
+		                        <input type="text" name="lastName" id="lastName" value="">
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td>
+		                        <input type="submit" value="Register" id="btnSubmit" onclick="regStudent();">
+		                    </td>
+		                    <td>
+		                        <input type="button" value="Get DB" id="btnSelect" onclick="getRecords();">
+		                        <input type="button" value="Wipe DB" id="btnDelete" onclick="deleteRecords();">
+		                    </td>
+		                </tr>
+		            </table>
+		            <div id="responseDiv">
 
+		            </div>
+	        	</div>
+			</div>
+		</div>
+		<!-- all spells page -->
+
+
+
+		<script type="text/javascript" src="cordova.js"></script>
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
 		<script src="js/jquery-2.1.4/jquery-2.1.4.js"></script>
 		<!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
@@ -53,6 +185,7 @@
 		<script src="js/nativedroid2.js"></script>
 		<script src="nd2settings.js"></script>
 		<script src="js/custom.js"></script>
+
 
 
 	</body>

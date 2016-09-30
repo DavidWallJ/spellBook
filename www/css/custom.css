@@ -1,3 +1,7 @@
 #leftpanel{
     margin-top: 64px;
 }
+
+#belowSpellNavHR {
+    border-top: 1px solid black;
+}
