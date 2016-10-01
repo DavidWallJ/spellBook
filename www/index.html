@@ -15,78 +15,58 @@
 		<meta name="mobile-web-app-capable" content="yes">
 	 	<meta name="apple-mobile-web-app-capable" content="yes" />
     	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-		<script type="text/javascript">
-			document.addEventListener("deviceready", onDeviceReady, false);
 
-			function onDeviceReady() {
-				var database = window.openDatabase("studentDB", "1.0", "Student Database", 200000);
-				database.transaction(populateDB, errorDB, successDB);
-				alert("phone gap has loaded");
-			}
+        <script>
+        //add listener when device ready
+            document.addEventListener("deviceready", onDeviceReady, false);
+            var db = window.openDatabase("studentDB", "1.0", "Student Database", 200000); //will create database Dummy_DB or open it
 
-			function populateDB(tx){
-				tx.executeSql("DROP TABLE IF EXISTS spell");
-				tx.executeSql("CREATE TABLE IF NOT EXISTS spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard)");
+            //function will be called when device ready
+            function onDeviceReady(){
+                db.transaction(populateDB, errorCB, successCB);
+            }
 
-				tx.executeSql("INSERT INTO spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard) VALUES (1,'Abi-Dalzim''s Horrid Wilting','8th-level necromancy',8,'1 action','150 feet','V, S, M (a bit of sponge)','Instantaneous','You draw the moisture from every creature in a 30-foot cube centered on a point you choose within range. Each creature in that area must make a Constitution saving throw. Constructs and undead aren''t affected, and plants and water elementals make this saving throw with disadvantage. A creature takes 10d8 necrotic damage on a failed save, or half as much damage on a successful one.','-','ee 15',0,0,0,0,0,0,1,0,1)");
-			}
+            //create table and insert some record
+            function populateDB(tx) {
+                tx.executeSql("DROP TABLE IF EXISTS spell");
+                tx.executeSql("CREATE TABLE IF NOT EXISTS spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard)");
 
-			function errorDB(error){
-				navigator.notification.alert(error, null, "You have an error", "OK");
-			}
+                tx.executeSql("INSERT INTO spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard) VALUES (1,'Abi-Dalzim''s Horrid Wilting','8th-level necromancy',8,'1 action','150 feet','V, S, M (a bit of sponge)','Instantaneous','You draw the moisture from every creature in a 30-foot cube centered on a point you choose within range. Each creature in that area must make a Constitution saving throw. Constructs and undead aren''t affected, and plants and water elementals make this saving throw with disadvantage. A creature takes 10d8 necrotic damage on a failed save, or half as much damage on a successful one.','-','ee 15',0,0,0,0,0,0,1,0,1)");
+                tx.executeSql("INSERT INTO spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard) VALUES (2,'Absorb Elements','1st-level abjuration',1,'1 reaction, which you take when you take acid, cold, fire, lightning, or thunder damage','Self','S ','1 round','The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on your next turn, the target takes an extra 1d6 damage of the triggering type, and the spell ends.','When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.','ee 15',0,0,0,1,0,1,0,0,1)");
+                tx.executeSql("INSERT INTO spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard) VALUES (3,'Acid Splash','Conjuration Cantrip',-1,'1 action','60 feet','V, S','Instantaneous','You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage. <br>This spells damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6) and 17th level (4d6).','-','phb 211',0,0,0,0,0,0,1,0,1)");
+                tx.executeSql("INSERT INTO spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard) VALUES (4,'Aganazzar''s Scorcher','2nd-level evocation',2,'1 action','30 feet','V, S, M (a red dragon''s scale)','Instantaneous','A line of roaring flame 30 feet long and 5 feet wide emanates from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 3d8 fire damage on a failed save, or half as much damage on a successful one.','When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.','ee 15',0,0,0,0,0,0,1,0,1)");
 
-			function successDB(){
-				navigator.notification.alert("Your DB has been created successfully", null, "Information", "OK");
-			}
+            }
 
-			function getRecords(){
-				database = window.openDatabase("studentDB", "1.0", "Student Database", 200000);
-				database.transaction(selectData, errorDB, successDB);
-			}
+            //function will be called when an error occurred
+            function errorCB(err) {
+                alert("Error processing SQL: "+err.code);
+            }
 
-			function selectData(tx){
-				tx.executeSql("SELECT * FROM spell",[], resultSuccess, resultError);
-			}
+            //function will be called when process succeed
+            function successCB() {
+                alert("success!");
+                db.transaction(queryDB,errorCB);
+            }
 
-			function resultSuccess(tx, response){
-				var dbOutput = document.getElementById("responseDiv");
-				var temp = '<ul data-role="listview">';
-				alert(response.rows.length);
-				for(i=0; i<response.rows.length; i++){
+            //select all from SoccerPlayer
+            function queryDB(tx){
+                tx.executeSql('SELECT * FROM spell',[],querySuccess,errorCB);
+            }
 
-					temp += '<li><a href="#">' + "<h2>" + response.rows.item(i).name + "</h2><p>" + response.rows.item(i).school + "</p></li></a>";
-					alert(temp);
-					dbOutput.innerHTML = temp;
-				};
+            function querySuccess(tx,result){
+                $('#spellsList').empty();
+                $.each(result.rows,function(index){
+                    var row = result.rows.item(index);
+                    $('#spellsList').append('<li><a href="#"><h3 class="ui-li-heading">'+row['name']+'</h3><p class="ui-li-desc">School: '+row['school']+'</p></a></li>');
+                });
 
-			}
-
-
-			function resultError(error){
-				alert(error);
-			}
-
-			function deleteRecords(){
-				database = window.openDatabase("studentDB", "1.0", "Student Database", 200000);
-				database.transaction(deleteDB, errorDB, deleteSuccess);
-			}
-
-			function deleteDB(tx){
-				tx.executeSql("DROP TABLE IF EXISTS spell");
-				tx.executeSql("CREATE TABLE IF NOT EXISTS spell (_id,name,school,level,casting_time)");
-			}
-
-			function deleteSuccess(){
-				navigator.notification.alert("DB has been wiped", null, "Information", "OK");
-			}
-
-			function deleteError(error){
-				alert(error);
-			}
-		</script>
+                $('#spellsList').listview();
+            }
+        </script>
 	</head>
-	<body>
-		<!-- start of the main page -->
+    <body>
+        <!-- start of the main page -->
 		<div data-role="page" id="main">
 
 			<nd2-include data-src="examples/fragments/panel.left.html"></nd2-include>
@@ -136,69 +116,12 @@
 							<li><a href="#">Range</a></li>
 						</ul>
 					</div>
-				<hr id="belowSpellNavHR">
+				<hr>
 
+             <ul id="spellsList"></ul>
 
-
-					<div id="responseDiv">
-
-
-					</div>
-
-				</ul>
-
-				<ul data-role="listview" data-icon="false">
-					<li data-role="list-divider">
-						Friends
-					</li>
-					<li>
-						<a href="#">
-							<img src="http://lorempixel.com/150/150/people/1/" class="ui-thumbnail ui-thumbnail-circular" />
-							<h2>Ethel Chancy</h2>
-							<p>ehtel.chancy@example.com</p>
-						</a>
-					</li>
-				</ul>
-
-				<hr />
-
-
-				<div>
-		            <table border = "1">
-		                <tr>
-		                    <td colspan="2">
-		                        <h2>Student Registration</h2>
-		                    </td>
-		                </tr>
-		                <tr>
-		                    <th>First Name:</th>
-		                    <td>
-		                        <input type="text" name="firstName" id="firstName" value="">
-		                    </td>
-		                </tr>
-		                <tr>
-		                    <th>Last Name:</th>
-		                    <td>
-		                        <input type="text" name="lastName" id="lastName" value="">
-		                    </td>
-		                </tr>
-		                <tr>
-		                    <td>
-		                        <input type="submit" value="Register" id="btnSubmit" onclick="regStudent();">
-		                    </td>
-		                    <td>
-		                        <input type="button" value="Get DB" id="btnSelect" onclick="getRecords();">
-		                        <input type="button" value="Wipe DB" id="btnDelete" onclick="deleteRecords();">
-		                    </td>
-		                </tr>
-		            </table>
-		            <div id="responseDiv">
-
-		            </div>
-	        	</div>
-			</div>
-		</div>
-		<!-- all spells page -->
+            </div>
+        </div>
 
 
 
