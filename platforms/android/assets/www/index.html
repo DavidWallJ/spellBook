@@ -50,14 +50,17 @@
 
 			function resultSuccess(tx, response){
 				var dbOutput = document.getElementById("responseDiv");
-				var temp = "<table border='1'><tr><th>ID</th><th>Name</th><th>School</th><th>Level</th><th>Casting Time</th><th>Range</th></tr>";
+				var temp = '<ul data-role="listview">';
 				alert(response.rows.length);
 				for(i=0; i<response.rows.length; i++){
 
-					temp += "<tr><td>" + response.rows.item(i)._id + "</td><td>" + response.rows.item(i).name + "</td><td>" + response.rows.item(i).school + "</td><td>" + response.rows.item(i).casting_time + "</td><td>" + response.rows.item(i).level + "</td><td>" + response.rows.item(i).range + "<td></tr>";
+					temp += '<li><a href="#">' + "<h2>" + response.rows.item(i).name + "</h2><p>" + response.rows.item(i).school + "</p></li></a>";
+					alert(temp);
 					dbOutput.innerHTML = temp;
-				}
+				};
+
 			}
+
 
 			function resultError(error){
 				alert(error);
@@ -134,6 +137,32 @@
 						</ul>
 					</div>
 				<hr id="belowSpellNavHR">
+
+
+
+					<div id="responseDiv">
+
+
+					</div>
+
+				</ul>
+
+				<ul data-role="listview" data-icon="false">
+					<li data-role="list-divider">
+						Friends
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://lorempixel.com/150/150/people/1/" class="ui-thumbnail ui-thumbnail-circular" />
+							<h2>Ethel Chancy</h2>
+							<p>ehtel.chancy@example.com</p>
+						</a>
+					</li>
+				</ul>
+
+				<hr />
+
+
 				<div>
 		            <table border = "1">
 		                <tr>
