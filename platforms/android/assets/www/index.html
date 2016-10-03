@@ -15,7 +15,6 @@
 		<meta name="mobile-web-app-capable" content="yes">
 	 	<meta name="apple-mobile-web-app-capable" content="yes" />
     	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-
         <script>
         //add listener when device ready
             document.addEventListener("deviceready", onDeviceReady, false);
@@ -55,13 +54,23 @@
             }
 
             function querySuccess(tx,result){
-                $('#spellsList').empty();
-                $.each(result.rows,function(index){
-                    var row = result.rows.item(index);
-                    $('#spellsList').append('<li><a href="#"><h3 class="ui-li-heading">'+row['name']+'</h3><p class="ui-li-desc">School: '+row['school']+'</p></a></li>');
-                });
-
+                // $('#spellsList').empty();
+                // $.each(result.rows,function(index){
+                //     var row = result.rows.item(index);
+                //     $('#spellsList').append('<li><a href="#"><h3 class="ui-li-heading">'+row['name']+'</h3><p class="ui-li-desc">School: '+row['school']+'</p></a></li>');
+                // });
+				$.each(result.rows,function(index){
+					var row = result.rows.item(index);
+					$('#spellsList').append('<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true"><h3 class="ui-li-heading">'+row['name']+'</h3><ul data-role="listview"><li>School: '+row['school']+'</li><li>Level: '+row['level']+'</li><li>Casting Time: '+row['casting_time']+'</li><li>Range: '+row['range']+'</li><li>Duration: '+row['duration']+'</li><li data-role="list-divider"></li></ul></p><p class="inset">'+row['description']+'</p><p class="inset">Components: '+row['components']+' </p></div>');
+				});
                 $('#spellsList').listview();
+            }
+
+
+
+			function sortByLevel(tx){
+				$('#spellsList').empty();
+                tx.executeSql('SELECT * FROM spell',[],querySuccess,errorCB);
             }
         </script>
 	</head>
@@ -110,18 +119,18 @@
 				</ul>
 					<div data-role="navbar" class="spellSortNav">
 						<ul>
-							<li class="spellSortNavLi"><a href="#">Level</a></li>
+							<li class="spellSortNavLi"><a href="#" onclick="sortByLevel();">Level</a></li>
 							<li><a href="#">Name</a></li>
 							<li><a href="#">Damage</a></li>
 							<li><a href="#">Range</a></li>
 						</ul>
 					</div>
 				<hr>
+			</div>
+             <div id="spellsList"></div>
 
-             <ul id="spellsList"></ul>
-
-            </div>
         </div>
+		<!-- end of all spells page -->
 
 
 
