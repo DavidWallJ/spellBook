@@ -15,7 +15,7 @@
 		<meta name="mobile-web-app-capable" content="yes">
 	 	<meta name="apple-mobile-web-app-capable" content="yes" />
     	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <script>
+        <!-- <script>
         //add listener when device ready
             document.addEventListener("deviceready", onDeviceReady, false);
             var db = window.openDatabase("studentDB", "1.0", "Student Database", 200000); //will create database Dummy_DB or open it
@@ -61,18 +61,12 @@
                 // });
 				$.each(result.rows,function(index){
 					var row = result.rows.item(index);
-					$('#spellsList').append('<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true"><h3 class="ui-li-heading">'+row['name']+'</h3><ul data-role="listview"><li>School: '+row['school']+'</li><li>Level: '+row['level']+'</li><li>Casting Time: '+row['casting_time']+'</li><li>Range: '+row['range']+'</li><li>Duration: '+row['duration']+'</li></ul></p><p class="inset">'+row['description']+'</p><p class="inset">Components: '+row['components']+' </p></div>');
+					$('#spellsList').append('<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true"><h3 class="ui-li-heading">'+row['name']+'</h3><ul data-role="listview"><li>School: '+row['school']+'</li><li>Level: '+row['level']+'</li><li>Casting Time: '+row['casting_time']+'</li><li>Range: '+row['range']+'</li><li>Duration: '+row['duration']+'</li></ul><p class="inset">'+row['description']+'</p><p class="inset">Components: '+row['components']+' </p></div>');
 				});
                 $('#spellsList').listview();
             }
 
-
-
-			function sortByLevel(tx){
-				$('#spellsList').empty();
-                tx.executeSql('SELECT * FROM spell',[],querySuccess,errorCB);
-            }
-        </script>
+        </script> -->
 	</head>
     <body>
         <!-- start of the main page -->
@@ -119,20 +113,19 @@
 				</ul>
 					<div data-role="navbar" class="spellSortNav">
 						<ul>
-							<li class="spellSortNavLi"><a href="#" onclick="sortByLevel();">Level</a></li>
-							<li><a href="#">Name</a></li>
-							<li><a href="#">Damage</a></li>
-							<li><a href="#">Range</a></li>
+							<li class="spellSortNavLi"><button id="btnReset" type=submit>O.B.L.</button></li>
+							<li><button id="btnOrderByName" type=submit>O.B.N.</button></li>
+							<li><button id="submitButton" type="submit">SAVE</button></li>
+							<li><button id="btnUpdate" type=submit>UPDATE</button></li>
+							<li><button id="btnDrop" type=submit>DROP</button></li>
 						</ul>
 					</div>
 				<hr>
 			</div>
-             <div id="spellsList"></div>
+            <div id="results"></div>
 
         </div>
 		<!-- end of all spells page -->
-
-
 
 		<script type="text/javascript" src="cordova.js"></script>
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
