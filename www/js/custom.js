@@ -16,7 +16,6 @@ document.addEventListener('deviceready', function() {
 //on spell page loadRecord
 
 $(document).on("pageshow","#allSpells",function(){ // When entering pagetwo
-  alert("allSpells is now shown");
   insertRecord();
   showRecords();
 });
@@ -93,7 +92,9 @@ function createTable()  // Function for Create Table in SQLite.
 
 {
 
-    db.transaction(function (tx) { tx.executeSql(createStatement, [], showRecords, onError); });
+    db.transaction(function (tx) {
+        tx.executeSql("DROP TABLE IF EXISTS spell");
+        tx.executeSql(createStatement, [], showRecords, onError); });
 
 }
 
