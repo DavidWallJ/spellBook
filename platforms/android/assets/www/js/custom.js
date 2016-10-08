@@ -16,9 +16,10 @@ document.addEventListener('deviceready', function() {
 //on spell page loadRecord
 
 $(document).on("pageshow","#allSpells",function(){ // When entering pagetwo
-  insertRecord();
-  showRecords();
+    insertRecord();
+    showRecords();
 });
+
 
 //start of db stuff
 
@@ -46,7 +47,7 @@ var dataset;
 
 var DataType;
 
- function initDatabase()  // Function Call When Page is ready.
+function initDatabase()  // Function Call When Page is ready.
 
 {
 
@@ -202,7 +203,7 @@ function showRecords() // Function For Retrive data from Database Display record
 
 {
 
-    $("#results").html('')
+    $("#results").html('');
 
     db.transaction(function (tx) {
 
@@ -213,15 +214,12 @@ function showRecords() // Function For Retrive data from Database Display record
             for (var i = 0, item = null; i < dataset.length; i++) {
 
                 item = dataset.item(i);
+                var linkeditdelete = '<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true"><h3 class="ui-li-heading">'+item['name']+'</h3><ul data-role="listview"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
 
-                var linkeditdelete = '<li>' + item['name'] + ' , ' + item['school'] + '    ' + '<a href="#" onclick="loadRecord(' + i + ');">edit</a>' + '    ' +
-
-                                            '<a href="#" onclick="deleteRecord(' + item['id'] + ');">delete</a></li>';
-
-                $("#results").append(linkeditdelete);
-
+                // $("#results").append(linkeditdelete);
+                $("#results").append(linkeditdelete).trigger('create');
             }
-
+            $("#results").listview("refresh");
         });
 
     });
@@ -293,11 +291,11 @@ function showRecordsByName() // Function For Retrive data from Database Display 
 $(document).ready(function () // Call function when page is ready for load..
 
 {
-;
+
 
     // $("body").fadeIn(2000); // Fede In Effect when Page Load..
 
-    initDatabase();
+    
 
     $("#submitButton").click(insertRecord);  // Register Event Listener when button click.
 
