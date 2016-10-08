@@ -2,6 +2,29 @@
     margin-top: 64px;
 }
 
-#belowSpellNavHR {
-    border-top: 1px solid black;
+/*spell list additional info spans*/
+
+.spellSortListsSpan {
+    float: right;
+    font-size: 8px;
+    line-height: 19px;
+    padding-right: 5px;
+}
+
+.spellSortListsSpanSpan {
+    float: right;
+    font-size: 11px;
+    line-height: 19px;
+    padding-right: 7px;
+}
+
+.spellSortListsRange, .spellSortListsDuration {
+    float: right;
+    font-size: 8px;
+    line-height: 17px;
+    padding-right: 5px;
+}
+
+.spellSortListsRange {
+    font-size: 9px;
 }

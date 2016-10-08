@@ -229,7 +229,7 @@ function showRecords() // Function For Retrive data from Database Display record
             for (var i = 0, item = null; i < dataset.length; i++) {
 
                 item = dataset.item(i);
-                var linkeditdelete = '<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true"><h3 class="ui-li-heading">'+item['name']+'</h3><ul data-role="listview"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
+                var linkeditdelete = '<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true"><h3 class="ui-li-heading">'+item['name']+'<span class="spellSortListsSpanSpan">'+item['level']+'</span><span class="spellSortListsSpan">Lvl: </span></h3><ul data-role="listview"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
 
                 // $("#results").append(linkeditdelete);
                 $("#results").append(linkeditdelete).trigger('create');
@@ -257,7 +257,7 @@ function showRecordsByLevel() // Function For Retrive data from Database Display
 
                 item = dataset.item(i);
 
-                var linkeditdelete = '<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true"><h3 class="ui-li-heading">'+item['name']+'</h3><ul data-role="listview"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
+                var linkeditdelete = '<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true"><h3 class="ui-li-heading">'+item['name']+'<span class="spellSortListsSpanSpan">'+item['level']+'</span><span class="spellSortListsSpan">Lvl: </span></h3><ul data-role="listview"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
 
                 $("#results").append(linkeditdelete).trigger('create');
 
@@ -270,33 +270,7 @@ function showRecordsByLevel() // Function For Retrive data from Database Display
 }
 
 
-function showRecordsByName() // Function For Retrive data from Database Display records as list
 
-{
-
-    $("#results").html('')
-
-    db.transaction(function (tx) {
-
-        tx.executeSql(sortByNameStatement, [], function (tx, result) {
-
-            dataset = result.rows;
-
-            for (var i = 0, item = null; i < dataset.length; i++) {
-
-                item = dataset.item(i);
-
-                var linkeditdelete = '<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true"><h3 class="ui-li-heading">'+item['name']+'</h3><ul data-role="listview"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
-
-                $("#results").append(linkeditdelete).trigger('create');
-
-            }
-            $("#results").listview("refresh");
-        });
-
-    });
-
-}
 
 function showRecordsByRange() // Function For Retrive data from Database Display records as list
 
@@ -314,7 +288,7 @@ function showRecordsByRange() // Function For Retrive data from Database Display
 
                 item = dataset.item(i);
 
-                var linkeditdelete = '<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true"><h3 class="ui-li-heading">'+item['name']+'</h3><ul data-role="listview"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
+                var linkeditdelete = '<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true"><h3 class="ui-li-heading">'+item['name']+'<span class="spellSortListsRange">'+item['range']+'</span></h3><ul data-role="listview"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
 
                 $("#results").append(linkeditdelete).trigger('create');
 
@@ -342,7 +316,7 @@ function showRecordsByDuration() // Function For Retrive data from Database Disp
 
                 item = dataset.item(i);
 
-                var linkeditdelete = '<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true"><h3 class="ui-li-heading">'+item['name']+'</h3><ul data-role="listview"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
+                var linkeditdelete = '<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true"><h3 class="ui-li-heading">'+item['name']+'<span class="spellSortListsDuration">'+item['duration']+'</span></h3><ul data-role="listview"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
 
                 $("#results").append(linkeditdelete).trigger('create');
 
@@ -371,7 +345,7 @@ $(document).ready(function () // Call function when page is ready for load..
     $("#btnUpdate").click(showRecords);
 
     $("#btnOrderByLevel").click(showRecordsByLevel);
-    $("#btnOrderByName").click(showRecordsByName);
+    $("#btnOrderByName").click(showRecords);
     $("#btnOrderByRange").click(showRecordsByRange);
     $("#btnOrderByDuration").click(showRecordsByDuration);
 
