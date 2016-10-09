@@ -68,7 +68,9 @@ html .ui-page-theme-a .ui-btn.ui-checkbox-on.ui-checkbox-on:after {
 .ui-input-text.ui-focus:after,
 .ui-input-search.ui-focus:after {
 	background-color: #673AB7;
-	height: 2px;
+	height: 35px;
+	background-image: none !important;
+	left: 0;
 }
 
 textarea.ui-input-text.ui-textinput-autogrow.ui-focus {
