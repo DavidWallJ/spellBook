@@ -41,3 +41,14 @@
     background-repeat: no-repeat;
     opacity: .5;
 }
+
+.ui-input-search:after {
+    background-image: none !important;
+}
+
+/*change active button style*/
+
+.ui-btn-active {
+    background-color: #673ab7 !important;
+    color: #ffffff !important;
+}
