@@ -52,3 +52,23 @@
     background-color: #673ab7 !important;
     color: #ffffff !important;
 }
+
+/*divider padding*/
+.ui-listview .ui-li-divider {
+    padding: 3px 8px;
+}
+
+/*list in discription*/
+
+.ui-listview .ui-li-static {
+    padding: 3px 15px;
+}
+
+.spellDescList li {
+    border: none !important;
+
+}
+
+.ui-collapsible-set .ui-collapsible.ui-corner-all {
+    border-radius: 0 0 7px 7px !important;
+}

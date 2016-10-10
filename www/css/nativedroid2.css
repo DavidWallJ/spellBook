@@ -557,7 +557,7 @@ code {
 }
 
 .ui-header .ui-title, .ui-footer .ui-title {
-	text-align: left;
+	text-align: center;
 	margin: 0px 72px;
 	font-size: 20px;
 	line-height: 1.8em;
