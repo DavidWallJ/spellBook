@@ -533,7 +533,7 @@ function dropTable() // Function Call when Drop Button Click.. Talbe will be dro
 
     // resetForm();
 
-    // initDatabase();
+    initDatabase();
 
 }
 
