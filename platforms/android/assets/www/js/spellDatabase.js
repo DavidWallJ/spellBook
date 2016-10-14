@@ -4,7 +4,7 @@
 
 var createStatement = "CREATE TABLE IF NOT EXISTS spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard)";
 
-var selectAllStatement = "SELECT * FROM spell where ranger = 1";
+var selectAllStatement = "SELECT * FROM spell";
 
 var insertStatement = "INSERT INTO spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard) VALUES (?, ?, ?, ? ,? ,? ,? ,? ,? ,?, ?, ?, ?, ? ,? ,? ,? ,? ,? ,?)";
 

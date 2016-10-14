@@ -39,3 +39,7 @@ $(window).on("navigate", function (event, data) {
       dropTable();
   }
 });
+
+$(document).on("pagehide", "div[data-role=page]", function(event){
+  $(event.target).remove();
+});
