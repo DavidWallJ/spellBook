@@ -15,58 +15,6 @@
 		<meta name="mobile-web-app-capable" content="yes">
 	 	<meta name="apple-mobile-web-app-capable" content="yes" />
     	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <!-- <script>
-        //add listener when device ready
-            document.addEventListener("deviceready", onDeviceReady, false);
-            var db = window.openDatabase("studentDB", "1.0", "Student Database", 200000); //will create database Dummy_DB or open it
-
-            //function will be called when device ready
-            function onDeviceReady(){
-                db.transaction(populateDB, errorCB, successCB);
-            }
-
-            //create table and insert some record
-            function populateDB(tx) {
-                tx.executeSql("DROP TABLE IF EXISTS spell");
-                tx.executeSql("CREATE TABLE IF NOT EXISTS spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard)");
-
-                tx.executeSql("INSERT INTO spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard) VALUES (1,'Abi-Dalzim''s Horrid Wilting','8th-level necromancy',8,'1 action','150 feet','V, S, M (a bit of sponge)','Instantaneous','You draw the moisture from every creature in a 30-foot cube centered on a point you choose within range. Each creature in that area must make a Constitution saving throw. Constructs and undead aren''t affected, and plants and water elementals make this saving throw with disadvantage. A creature takes 10d8 necrotic damage on a failed save, or half as much damage on a successful one.','-','ee 15',0,0,0,0,0,0,1,0,1)");
-                tx.executeSql("INSERT INTO spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard) VALUES (2,'Absorb Elements','1st-level abjuration',1,'1 reaction, which you take when you take acid, cold, fire, lightning, or thunder damage','Self','S ','1 round','The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on your next turn, the target takes an extra 1d6 damage of the triggering type, and the spell ends.','When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.','ee 15',0,0,0,1,0,1,0,0,1)");
-                tx.executeSql("INSERT INTO spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard) VALUES (3,'Acid Splash','Conjuration Cantrip',-1,'1 action','60 feet','V, S','Instantaneous','You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage. <br>This spells damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6) and 17th level (4d6).','-','phb 211',0,0,0,0,0,0,1,0,1)");
-                tx.executeSql("INSERT INTO spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard) VALUES (4,'Aganazzar''s Scorcher','2nd-level evocation',2,'1 action','30 feet','V, S, M (a red dragon''s scale)','Instantaneous','A line of roaring flame 30 feet long and 5 feet wide emanates from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 3d8 fire damage on a failed save, or half as much damage on a successful one.','When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.','ee 15',0,0,0,0,0,0,1,0,1)");
-
-            }
-
-            //function will be called when an error occurred
-            function errorCB(err) {
-                alert("Error processing SQL: "+err.code);
-            }
-
-            //function will be called when process succeed
-            function successCB() {
-                alert("success!");
-                db.transaction(queryDB,errorCB);
-            }
-
-            //select all from SoccerPlayer
-            function queryDB(tx){
-                tx.executeSql('SELECT * FROM spell',[],querySuccess,errorCB);
-            }
-
-            function querySuccess(tx,result){
-                // $('#spellsList').empty();
-                // $.each(result.rows,function(index){
-                //     var row = result.rows.item(index);
-                //     $('#spellsList').append('<li><a href="#"><h3 class="ui-li-heading">'+row['name']+'</h3><p class="ui-li-desc">School: '+row['school']+'</p></a></li>');
-                // });
-				$.each(result.rows,function(index){
-					var row = result.rows.item(index);
-					$('#spellsList').append('<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true"><h3 class="ui-li-heading">'+row['name']+'</h3><ul data-role="listview"><li>School: '+row['school']+'</li><li>Level: '+row['level']+'</li><li>Casting Time: '+row['casting_time']+'</li><li>Range: '+row['range']+'</li><li>Duration: '+row['duration']+'</li></ul><p class="inset">'+row['description']+'</p><p class="inset">Components: '+row['components']+' </p></div>');
-				});
-                $('#spellsList').listview();
-            }
-
-        </script> -->
 	</head>
     <body>
         <!-- start of the main page -->
@@ -85,65 +33,139 @@
 			</div>
 			<div role="main" class="ui-content" data-inset="false">
 				<div role="main" class="ui-content wow fadeInDown" data-inset="false">
-						<a href="#allSpells" data-role="button" data-icon="grid">All Spells</a>
+						<a href="index2.html" data-role="button" data-icon="grid">All Spells</a>
 						<a href="#" data-role="button" data-icon="bullets">Spellbooks</a>
 						<a href="#" data-role="button" data-icon="gear">Settings</a>
 				</div>
+				<div data-role="collapsibleset" class="ui-content" data-theme="a" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; width:250px;">
+					<div data-role="collapsible" data-inset="true">
+					<h2>Bard</h2>
+						<ul data-role="listview">
+							<li><a href="index2.html?class=bard&level=1">Lvl: 1</a></li>
+							<li><a href="index2.html?class=bard&level=2" >Lvl: 2</a></li>
+							<li><a href="index2.html?class=bard&level=3" >Lvl: 3</a></li>
+							<li><a href="index2.html?class=bard&level=4" >Lvl: 4</a></li>
+							<li><a href="index2.html?class=bard&level=5" >Lvl: 5</a></li>
+							<li><a href="index2.html?class=bard&level=6" >Lvl: 6</a></li>
+							<li><a href="index2.html?class=bard&level=7" >Lvl: 7</a></li>
+							<li><a href="index2.html?class=bard&level=8" >Lvl: 8</a></li>
+							<li><a href="index2.html?class=bard&level=9" >Lvl: 9</a></li>
+							<li><a href="index2.html?class=bard&level=ALL" >All</a></li>
+						</ul>
+					</div><!-- /collapsible -->
+
+					<div data-role="collapsible" data-inset="true">
+					<h2>Cleric</h2>
+						<ul data-role="listview">
+							<li><a href="index2.html?class=cleric&level=1">Lvl: 1</a></li>
+							<li><a href="index2.html?class=cleric&level=2" >Lvl: 2</a></li>
+							<li><a href="index2.html?class=cleric&level=3" >Lvl: 3</a></li>
+							<li><a href="index2.html?class=cleric&level=4" >Lvl: 4</a></li>
+							<li><a href="index2.html?class=cleric&level=5" >Lvl: 5</a></li>
+							<li><a href="index2.html?class=cleric&level=6" >Lvl: 6</a></li>
+							<li><a href="index2.html?class=cleric&level=7" >Lvl: 7</a></li>
+							<li><a href="index2.html?class=cleric&level=8" >Lvl: 8</a></li>
+							<li><a href="index2.html?class=cleric&level=9" >Lvl: 9</a></li>
+							<li><a href="index2.html?class=cleric&level=ALL" >All</a></li>
+						</ul>
+					</div><!-- /collapsible -->
+
+					<div data-role="collapsible" data-inset="true">
+					<h2>Druid</h2>
+						<ul data-role="listview">
+							<li><a href="index2.html?class=druid&level=1">Lvl: 1</a></li>
+							<li><a href="index2.html?class=druid&level=2" >Lvl: 2</a></li>
+							<li><a href="index2.html?class=druid&level=3" >Lvl: 3</a></li>
+							<li><a href="index2.html?class=druid&level=4" >Lvl: 4</a></li>
+							<li><a href="index2.html?class=druid&level=5" >Lvl: 5</a></li>
+							<li><a href="index2.html?class=druid&level=6" >Lvl: 6</a></li>
+							<li><a href="index2.html?class=druid&level=7" >Lvl: 7</a></li>
+							<li><a href="index2.html?class=druid&level=8" >Lvl: 8</a></li>
+							<li><a href="index2.html?class=druid&level=9" >Lvl: 9</a></li>
+							<li><a href="index2.html?class=druid&level=ALL" >All</a></li>
+						</ul>
+					</div><!-- /collapsible -->
+
+					<div data-role="collapsible" data-inset="true">
+					<h2>Paladin</h2>
+						<ul data-role="listview">
+							<li><a href="#" data-rel="dialog">Lvl: 1</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 2</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 3</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 4</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 5</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 6</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 7</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 8</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 9</a></li>
+							<li><a href="#" data-rel="dialog">All</a></li>
+						</ul>
+					</div><!-- /collapsible -->
+					<div data-role="collapsible" data-inset="true">
+					<h2>Ranger</h2>
+						<ul data-role="listview">
+							<li><a href="#" data-rel="dialog">Lvl: 1</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 2</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 3</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 4</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 5</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 6</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 7</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 8</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 9</a></li>
+							<li><a href="#" data-rel="dialog">All</a></li>
+						</ul>
+					</div><!-- /collapsible -->
+					<div data-role="collapsible" data-inset="true">
+					<h2>Sorcerer</h2>
+						<ul data-role="listview">
+							<li><a href="#" data-rel="dialog">Lvl: 1</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 2</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 3</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 4</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 5</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 6</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 7</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 8</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 9</a></li>
+							<li><a href="#" data-rel="dialog">All</a></li>
+						</ul>
+					</div><!-- /collapsible -->
+					<div data-role="collapsible" data-inset="true">
+					<h2>Warlock</h2>
+						<ul data-role="listview">
+							<li><a href="#" data-rel="dialog">Lvl: 1</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 2</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 3</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 4</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 5</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 6</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 7</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 8</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 9</a></li>
+							<li><a href="#" data-rel="dialog">All</a></li>
+						</ul>
+					</div><!-- /collapsible -->
+					<div data-role="collapsible" data-inset="true">
+					<h2>Wizard</h2>
+						<ul data-role="listview">
+							<li><a href="#" data-rel="dialog">Lvl: 1</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 2</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 3</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 4</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 5</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 6</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 7</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 8</a></li>
+							<li><a href="#" data-rel="dialog">Lvl: 9</a></li>
+							<li><a href="#" data-rel="dialog">All</a></li>
+						</ul>
+					</div><!-- /collapsible -->
+				</div><!-- /collapsible set -->
+
 			</div>
 		</div>
 		<!-- main page -->
-
-		<!-- start of the all spells page -->
-		<div data-role="page" id="allSpells">
-
-			<nd2-include data-src="examples/fragments/panel.left.html"></nd2-include>
-
-			<div data-role="panel" id="bottomsheet" data-animate="false" data-position="bottom" data-display="overlay">
-				<nd2-include data-src="examples/fragments/bottom.sheet.html"></nd2-include>
-			</div>
-
-			<div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
-				<a href="#bottomsheet" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay="1.2s"><i class="zmdi zmdi-more-vert"></i></a>
-				<a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay="0.8s"><i class="zmdi zmdi-menu"></i></a>
-				<h1 class="wow fadeIn" data-wow-delay="0.4s">Your Spellbook</h1>
-			</div>
-			<div role="main" class="ui-content wow fadeInDown" data-inset="false">
-				<ul data-role="listview" data-mini="true">
-					<li data-role="list-divider" data-mini="true" data-theme="b">Sort by:</li>
-				</ul>
-					<div data-role="navbar" class="spellSortNav">
-						<ul>
-							<li><button id="btnOrderByName" type="submit" class="ui-btn-active" >Name</button></li>
-							<li class="spellSortNavLi"><button id="btnOrderByLevel" type="submit">Level</button></li>
-							<li><button id="btnOrderByRange" type="submit">Range</button></li>
-							<li><button id="btnOrderByDuration" type="submit">Duration</button></li>
-							<!-- <li><button id="btnDrop" type=submit>DROP</button></li>
-							<li><button id="btnUpdate" type=submit>Update</button></li> -->
-						</ul>
-					</div>
-
-				</div>
-
-				<form class="spellBookSearchBars">
-					<input data-type="search" id="searchForCollapsibleSet">
-				</form>
-        		<div data-role="collapsible-set" data-filter="true" data-inset="true" id="results" data-input="#searchForCollapsibleSet"></div>
-
-			<!-- <div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true">
-				<h3 class="ui-li-heading">Name</h3>
-				<ul data-role="listview">
-					<li>School:</li>
-					<li>Level:</li>
-					<li>Casting Time:</li>
-					<li>Range:</li>
-					<li>Duration: </li>
-				</ul>
-				<p class="inset"></p><p class="inset">Components: </p></div>
-        	</div> -->
-		<!-- end of all spells page -->
-
-
-
 
 
 
@@ -160,6 +182,8 @@
 		<script src="nd2settings.js"></script>
 		<script src="js/spellDatabase.js"></script>
 		<script src="js/custom.js"></script>
+
+
 
 
 

@@ -4,7 +4,7 @@
 
 var createStatement = "CREATE TABLE IF NOT EXISTS spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard)";
 
-var selectAllStatement = "SELECT * FROM spell";
+var selectAllStatement = 'SELECT * FROM spell';
 
 var insertStatement = "INSERT INTO spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard) VALUES (?, ?, ?, ? ,? ,? ,? ,? ,? ,?, ?, ?, ?, ? ,? ,? ,? ,? ,? ,?)";
 
@@ -580,7 +580,36 @@ function onError(tx, error) // Function for Hendeling Error...
     alert(error.message);
 
 }
+function showRecordsByClassStatement(theStatement){
 
+    $("#results").html('');
+
+    db.transaction(function (tx) {
+
+        tx.executeSql(theStatement, [], function (tx, result) {
+
+            dataset = result.rows;
+
+            for (var i = 0, item = null; i < dataset.length; i++) {
+
+                item = dataset.item(i);
+
+                var spellNameString = item['name'];
+                var spellNameStringSplit = spellNameString.split(" ");
+
+                var linkeditdelete = '<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true" data-filtertext='+spellNameStringSplit+'><h3 class="ui-li-heading">'+item['name']+'<span class="spellSortListsSpanSpan">'+item['level']+'</span><span class="spellSortListsSpan">Lvl: </span></h3><ul data-role="listview"  class="spellDescList"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
+
+                // $("#results").append(linkeditdelete);
+                $("#results").append(linkeditdelete).trigger('create');
+            }
+            $('#results').bind('pageinit', function() {
+                $('#results').listview('refresh');
+            });
+        });
+
+    });
+
+}
 function showRecords() // Function For Retrive data from Database Display records as list
 
 {
@@ -705,7 +734,7 @@ function showRecordsByDuration() // Function For Retrive data from Database Disp
                 var spellNameString = item['duration'];
                 var spellNameStringSplit = spellNameString.split(" ");
 
-                var linkeditdelete = '<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true" data-filtertext="'+item['duration']+','+spellNameStringSplit+'"><h3 class="ui-li-heading">'+item['name']+'<span class="spellSortListsDuration">'+item['duration']+'</span></h3><ul data-role="listview" class="spellDescList"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
+                var linkeditdelete = '<div class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed" data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true" data-filtertext="'+item['duration']+','+spellNameStringSplit+'"><h3 class="ui-li-heading">'+item['name']+'<span class="spellSortListsDuration">'+item['duration']+'</span></h3><ul data-role="listview" class="spellDescList"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
 
                 $("#results").append(linkeditdelete).trigger('create');
             }

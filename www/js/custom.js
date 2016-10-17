@@ -27,10 +27,32 @@ $(document).ready(function () {
     });
 });
 //on spell page loadRecord
+function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
 
-$(document).on("pageshow","#allSpells",function(){ // When entering pagetwo
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+}
+
+$(document).on("pageshow","#index2",function(){ // When entering pagetwo
+    var className = getUrlParameter('class');
+    var classLevel = getUrlParameter('level');
+    if(classLevel === 'ALL'){
+        classLevel = '1 OR level = 2 OR level = 3 OR level = 4 OR level = 5 OR level = 6 OR level = 7 OR level = 8 OR level = 9';
+    }
+    selectAllStatement = 'SELECT * FROM spell WHERE ' + className + ' = 1 AND level = ' + classLevel + '';
+    alert(selectAllStatement);
     insertRecord();
-    showRecords();
+    showRecordsByClassStatement(selectAllStatement);
+
 });
 
 $(window).on("navigate", function (event, data) {
