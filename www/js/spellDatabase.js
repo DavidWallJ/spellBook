@@ -563,15 +563,15 @@ function dropTable() // Function Call when Drop Button Click.. Talbe will be dro
 //
 // }
 //
-function loadAndReset() //Function for Load and Reset...
-
-{
-
-    resetForm();
-
-    showRecords();
-
-}
+// function loadAndReset() //Function for Load and Reset...
+//
+// {
+//
+//     resetForm();
+//
+//     showRecords();
+//
+// }
 
 function onError(tx, error) // Function for Hendeling Error...
 
@@ -580,6 +580,8 @@ function onError(tx, error) // Function for Hendeling Error...
     alert(error.message);
 
 }
+
+
 function showRecordsByClassStatement(theStatement){
 
     $("#results").html('');
@@ -647,7 +649,7 @@ function showRecordsByLevel() // Function For Retrive data from Database Display
 
 {
 
-    $("#results").html('')
+    $("#results").html('');
 
     db.transaction(function (tx) {
 
@@ -686,7 +688,7 @@ function showRecordsByRange() // Function For Retrive data from Database Display
 
 {
 
-    $("#results").html('')
+    $("#results").html('');
 
     db.transaction(function (tx) {
 
@@ -698,10 +700,13 @@ function showRecordsByRange() // Function For Retrive data from Database Display
 
                 item = dataset.item(i);
 
-                var spellNameString = item['range'];
+                var spellRangeString = item['range'];
+                var spellRangeStringSplit = spellRangeString.split(" ");
+
+                var spellNameString = item['name'];
                 var spellNameStringSplit = spellNameString.split(" ");
 
-                var linkeditdelete = '<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true" data-filtertext="'+item['range']+','+spellNameStringSplit+'"><h3 class="ui-li-heading">'+item['name']+'<span class="spellSortListsRange">'+item['range']+'</span></h3><ul data-role="listview"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
+                var linkeditdelete = '<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true" data-filtertext="'+item['range']+','+spellRangeStringSplit+','+spellNameStringSplit+'"><h3 class="ui-li-heading">'+item['name']+'<span class="spellSortListsRange">'+item['range']+'</span></h3><ul data-role="listview"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
 
                 $("#results").append(linkeditdelete).trigger('create');
 
@@ -719,7 +724,7 @@ function showRecordsByDuration() // Function For Retrive data from Database Disp
 
 {
 
-    $("#results").html('')
+    $("#results").html('');
 
     db.transaction(function (tx) {
 
@@ -731,10 +736,13 @@ function showRecordsByDuration() // Function For Retrive data from Database Disp
 
                 item = dataset.item(i);
 
-                var spellNameString = item['duration'];
+                var spellDurationString = item['duration'];
+                var spellDurationStringSplit = spellDurationString.split(" ");
+
+                var spellNameString = item['name'];
                 var spellNameStringSplit = spellNameString.split(" ");
 
-                var linkeditdelete = '<div class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed" data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true" data-filtertext="'+item['duration']+','+spellNameStringSplit+'"><h3 class="ui-li-heading">'+item['name']+'<span class="spellSortListsDuration">'+item['duration']+'</span></h3><ul data-role="listview" class="spellDescList"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
+                var linkeditdelete = '<div class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed" data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="b" data-mini="true" data-filtertext="'+item['duration']+','+spellDurationStringSplit+','+spellNameStringSplit+'"><h3 class="ui-li-heading">'+item['name']+'<span class="spellSortListsDuration">'+item['duration']+'</span></h3><ul data-role="listview" class="spellDescList"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
 
                 $("#results").append(linkeditdelete).trigger('create');
             }
@@ -750,25 +758,10 @@ function showRecordsByDuration() // Function For Retrive data from Database Disp
 
 
 
-
+//ensures that there are no duplicates db entries created
 $(document).ready(function () // Call function when page is ready for load..
 
 {
-
-
-    // $("body").fadeIn(2000); // Fede In Effect when Page Load..
-
     initDatabase();
-
-    $("#submitButton").click(insertRecord);  // Register Event Listener when button click.
-
-    $("#btnUpdate").click(showRecords);
-
-    // $("#btnOrderByLevel").click(showRecordsByLevel);
-    // $("#btnOrderByName").click(showRecords);
-    // $("#btnOrderByRange").click(showRecordsByRange);
-    // $("#btnOrderByDuration").click(showRecordsByDuration);
-
-    $("#btnDrop").click(dropTable);
 
 });
