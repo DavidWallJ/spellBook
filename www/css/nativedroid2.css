@@ -8,7 +8,7 @@
 /*@import url("nativedroid2.color.indigo.css");*/
 /*@import url("nativedroid2.color.light-blue.css");*/
 /*@import url("nativedroid2.color.cyan.css");*/
-@import url("nativedroid2.color.teal.css");
+/*@import url("nativedroid2.color.teal.css");*/
 /*@import url("nativedroid2.color.green.css");*/
 /*@import url("nativedroid2.color.light-green.css");*/
 /*@import url("nativedroid2.color.lime.css");*/
@@ -17,7 +17,6 @@
 /*@import url("nativedroid2.color.orange.css");*/
 /*@import url("nativedroid2.color.deep-orange.css");*/
 /*@import url("nativedroid2.color.brown.css");*/
-/*@import url("nativedroid2.color.grey.css");*/
 /*@import url("nativedroid2.color.blue-grey.css");*/
 
 
@@ -32,7 +31,8 @@ body {
 	-ms-transition: opacity 0.4s;
 	-o-transition: opacity 0.4s;
 	transition: opacity 0.4s;
-	font-size: 16px;
+	font-size: 17px;
+	font-style: italic;
 
 	opacity: 1;
 	text-shadow: none !important;
@@ -53,16 +53,14 @@ body button {
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
+	font-style: normal;
 }
 
 body.nd2-ready {
 	opacity: 1;
 }
 
-body, input, select, textarea, button, .ui-btn,h1,h2,h3,h4,h5,h6 {
-	font-family: "RobotoDraft","Roboto","Helvetica Neue",sans-serif;
-	font-weight: 400;
-}
+
 
 /*
  * Typography
@@ -74,7 +72,7 @@ h3 { font-size: 24px; line-height: 1.2em; font-weight: 400; }
 h4 { font-size: 20px; line-height: 1.2em; font-weight: 500; }
 h5 { font-size: 16px; line-height: 1.2em; font-weight: 400; }
 h6 { font-size: 14px; line-height: 1.2em; font-weight: 400;}
-p { font-size: 16px; line-height: 1.2em; }
+p { font-size: 15px; line-height: 1.3em; }
 
 .nd2-display-4 { font-size: 112px; line-height: 1.2em; font-weight: 100; display: block; }
 .nd2-display-3 { font-size: 56px; line-height: 1.2em; font-weight: 400; display: block; }
@@ -126,6 +124,22 @@ blockquote footer:before {
 	margin: 0px 7px;
 
 }
+
+input, select, textarea, button, .ui-btn,h1,h2,h3,h4,h5,h6 {
+	font-family: "Andale Mono", AndaleMono, monospace;
+
+}
+
+.spellBookOrderBy {
+	font-family: "Andale Mono", AndaleMono, monospace !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+}
+
+body {
+	font-family: "Arial Narrow", Arial, sans-serif;
+}
+
 
 code, pre {
 	padding: 0px 7px;
@@ -933,7 +947,7 @@ textarea.ui-input-text.ui-textinput-autogrow {
 	position: absolute;
 	width: 100%;
 	height: 0px;
-	background-color: #673ab7;
+	background-color: #607d8b;
 
 	-webkit-transition: width 0.4s, height 0.4s, background 0.4s;
 	-moz-transition: width 0.4s, height 0.4s, background 0.4s;
