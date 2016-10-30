@@ -31,9 +31,45 @@ function getUrlParameter(sParam) {
 }
 
 //
+
+$(document).on("pageshow","#main",function(){
+
+setTimeout(
+  function()
+  {
+      alert('heres johnny');
+      $('#spin1').attr('value',localStorage.lvlOneValue);
+      $('#spin2').attr('value',localStorage.lvlTwoValue);
+      $('#spin3').attr('value',localStorage.lvlThreeValue);
+      $('#spin4').attr('value',localStorage.lvlFourValue);
+      $('#spin5').attr('value',localStorage.lvlFiveValue);
+      $('#spin6').attr('value',localStorage.lvlSixValue);
+      $('#spin7').attr('value',localStorage.lvlSevenValue);
+      $('#spin8').attr('value',localStorage.lvlEightValue);
+      $('#spin9').attr('value',localStorage.lvlNineValue);
+      $('#spin10').attr('value',localStorage.lvlTenValue);
+
+  }, 500);
+});
+
 $(document).on("pageshow","#index2",function(){ // When entering pagetwo
 
+    setTimeout(
+      function()
+      {
+          alert('heres johnny');
+          $('#spin1').attr('value',localStorage.lvlOneValue);
+          $('#spin2').attr('value',localStorage.lvlTwoValue);
+          $('#spin3').attr('value',localStorage.lvlThreeValue);
+          $('#spin4').attr('value',localStorage.lvlFourValue);
+          $('#spin5').attr('value',localStorage.lvlFiveValue);
+          $('#spin6').attr('value',localStorage.lvlSixValue);
+          $('#spin7').attr('value',localStorage.lvlSevenValue);
+          $('#spin8').attr('value',localStorage.lvlEightValue);
+          $('#spin9').attr('value',localStorage.lvlNineValue);
+          $('#spin10').attr('value',localStorage.lvlTenValue);
 
+      }, 500);
     //assign functions to buttons on page index2
     $("#btnOrderByLevel").click(showRecordsByLevel);
     $("#btnOrderByRange").click(showRecordsByRange);
