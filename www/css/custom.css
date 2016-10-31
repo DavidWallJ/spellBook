@@ -20,7 +20,7 @@
 
 .spellSortListsRange, .spellSortListsDuration {
     float: right;
-    font-size: 8px;
+    font-size: 7px;
     line-height: 17px;
     padding-right: 5px;
 }
@@ -55,7 +55,7 @@
 
 /*divider padding*/
 .ui-listview .ui-li-divider {
-    padding: 1px 6px;
+    padding: 4px 6px;
 }
 
 /*list in discription*/
@@ -150,4 +150,17 @@ a {
     font-style: italic;
     margin-bottom: 3px;
     margin-top: 0;
+}
+
+/*spell counter*/
+
+.ui-panel-inner {
+    background-color: white;
+}
+.spellBookSpellCountHeader {
+    margin: -17px -17px 2px -17px !important;
+}
+
+.spellBookLevelTenCounter {
+    margin-bottom: 60px;
 }
