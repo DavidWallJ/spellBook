@@ -55,7 +55,7 @@
 
 /*divider padding*/
 .ui-listview .ui-li-divider {
-    padding: 4px 6px;
+    padding: 4px 10px;
 }
 
 /*list in discription*/
@@ -146,10 +146,19 @@ a {
     border-style: none;
 }
 
+.spellBookChooseAClass {
+    margin: 15px 0;
+}
+
 .spellBookChooseALevel {
-    font-style: italic;
     margin-bottom: 3px;
     margin-top: 0;
+
+}
+
+.spellBookChooseAClass, .spellBookChooseALevel {
+    font-style: italic;
+
 }
 
 /*spell counter*/
@@ -167,4 +176,8 @@ a {
 
 .ui-body-a, .spellDescList li {
     background-color: #e6ebee !important;
+}
+
+.ui-btn.ui-input-clear {
+    padding-right: 10px;
 }
