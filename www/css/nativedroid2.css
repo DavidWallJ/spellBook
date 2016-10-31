@@ -246,10 +246,10 @@ code {
 
 .ui-btn-icon-left:after, .ui-btn-icon-right:after, .ui-btn-icon-top:after, .ui-btn-icon-bottom:after, .ui-btn-icon-notext:after {
 	background-color: transparent;
-	background-color: #9ea3a8;
+	background-color: #607d8b;
 	background-position: center center;
 	background-repeat: no-repeat;
-	color: #cccccc;
+	color: #ffffff;
 }
 
 .ui-panel-dismiss.ui-panel-dismiss-open {

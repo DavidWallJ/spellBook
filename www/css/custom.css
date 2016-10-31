@@ -164,3 +164,7 @@ a {
 .spellBookLevelTenCounter {
     margin-bottom: 60px;
 }
+
+.ui-body-a, .spellDescList li {
+    background-color: #e6ebee !important;
+}

@@ -1,0 +1,184 @@
+			<!-- panel left -->
+
+			<!-- <div data-role="panel" id="leftpanel" data-display="overlay" data-position-fixed="true" > -->
+
+				<!-- <div class="nd2-sidepanel-profile wow fadeInDown">
+					<img class="profile-background" src="http://lorempixel.com/400/200/abstract/2/" />
+					<div class="row">
+						<div class="col-xs-4 center-xs">
+							<div class="box">
+								<img class="profile-thumbnail" src="http://lorempixel.com/200/200/people/9/" />
+							</div>
+						</div>
+						<div class="col-xs-8">
+							<div class="box profile-text">
+								<strong>Jane Doe</strong>
+								<span class="subline">Super Power User</span>
+							</div>
+						</div>
+					</div>
+				</div> -->
+
+
+				<!-- <ul data-role="listview" data-inset="false">
+					<li data-role="list-divider">Spell Count</li>
+				</ul>
+
+				<div class="ui-field-contain" id="spin1Div">
+					<label for="spin">Level One</label>
+					<input type="text" data-role="spinbox" name="spin" id="spin1" value="0" min="0" max="100" />
+				</div>
+
+				<div class="ui-field-contain">
+					<label for="spin">Level Two</label>
+					<input type="text" data-role="spinbox" name="spin" id="spin2" value="0" min="0" max="100" />
+				</div>
+
+				<div class="ui-field-contain">
+					<label for="spin">Level Three</label>
+					<input type="text" data-role="spinbox" name="spin" id="spin3" value="0" min="0" max="100" />
+				</div>
+
+				<div class="ui-field-contain">
+					<label for="spin">Level Four</label>
+					<input type="text" data-role="spinbox" name="spin" id="spin4" value="0" min="0" max="100" />
+				</div>
+
+				<div class="ui-field-contain">
+					<label for="spin">Level Five</label>
+					<input type="text" data-role="spinbox" name="spin" id="spin5" value="0" min="0" max="100" />
+				</div>
+
+				<div class="ui-field-contain">
+					<label for="spin">Level Six</label>
+					<input type="text" data-role="spinbox" name="spin" id="spin6" value="0" min="0" max="100" />
+				</div>
+
+				<div class="ui-field-contain">
+					<label for="spin">Level Seven</label>
+					<input type="text" data-role="spinbox" name="spin" id="spin7" value="0" min="0" max="100" />
+				</div>
+
+				<div class="ui-field-contain">
+					<label for="spin">Level Eight</label>
+					<input type="text" data-role="spinbox" name="spin" id="spin8" value="0" min="0" max="100" />
+				</div>
+
+				<div class="ui-field-contain">
+					<label for="spin">Level Nine</label>
+					<input type="text" data-role="spinbox" name="spin" id="spin9" value="0" min="0" max="100" />
+				</div>
+
+				<div class="ui-field-contain">
+					<label for="spin">Level Ten</label>
+					<input type="text" data-role="spinbox" name="spin" id="spin10" value="0" min="0" max="100" />
+				</div>
+
+			</div> -->
+			<!-- /panel left -->
+
+
+			<script type="text/javascript">
+
+			$('#spin1').on('change', function() {
+				var spin1 = document.getElementById('spin1');
+				// alert( this.value ); // or $(this).val()
+				localStorage.lvlOneValue = this.value;
+				// alert(localStorage.lvlOneValue);
+				document.getElementById('spin1').value = localStorage.lvlOneValue;
+
+				$(this).attr('value',this.value);
+			});
+
+			$('#spin2').on('change', function() {
+				var spin2 = document.getElementById('spin2');
+				// alert( this.value ); // or $(this).val()
+				localStorage.lvlTwoValue = this.value;
+				// alert(localStorage.lvlTwoValue);
+				document.getElementById('spin2').value = localStorage.lvlTwoValue;
+
+				$(this).attr('value',this.value);
+			});
+
+			$('#spin3').on('change', function() {
+				var spin3 = document.getElementById('spin3');
+				// alert( this.value ); // or $(this).val()
+				localStorage.lvlThreeValue = this.value;
+				// alert(localStorage.lvlThreeValue);
+				document.getElementById('spin3').value = localStorage.lvlThreeValue;
+
+				$(this).attr('value',this.value);
+			});
+
+			$('#spin4').on('change', function() {
+				var spin4 = document.getElementById('spin4');
+				// alert( this.value ); // or $(this).val()
+				localStorage.lvlFourValue = this.value;
+				// alert(localStorage.lvlFourValue);
+				document.getElementById('spin4').value = localStorage.lvlFourValue;
+
+				$(this).attr('value',this.value);
+			});
+
+			$('#spin5').on('change', function() {
+				var spin5 = document.getElementById('spin5');
+				// alert( this.value ); // or $(this).val()
+				localStorage.lvlFiveValue = this.value;
+				// alert(localStorage.lvlFiveValue);
+				document.getElementById('spin5').value = localStorage.lvlFiveValue;
+
+				$(this).attr('value',this.value);
+			});
+
+			$('#spin6').on('change', function() {
+				var spin6 = document.getElementById('spin6');
+				// alert( this.value ); // or $(this).val()
+				localStorage.lvlSixValue = this.value;
+				// alert(localStorage.lvlSixValue);
+				document.getElementById('spin6').value = localStorage.lvlSixValue;
+
+				$(this).attr('value',this.value);
+			});
+
+			$('#spin7').on('change', function() {
+				var spin7 = document.getElementById('spin7');
+				// alert( this.value ); // or $(this).val()
+				localStorage.lvlSevenValue = this.value;
+				// alert(localStorage.lvlSevenValue);
+				document.getElementById('spin7').value = localStorage.lvlSevenValue;
+
+				$(this).attr('value',this.value);
+			});
+
+			$('#spin8').on('change', function() {
+				var spin8 = document.getElementById('spin8');
+				// alert( this.value ); // or $(this).val()
+				localStorage.lvlEightValue = this.value;
+				// alert(localStorage.lvlEightValue);
+				document.getElementById('spin8').value = localStorage.lvlEightValue;
+
+				$(this).attr('value',this.value);
+			});
+
+			$('#spin9').on('change', function() {
+				var spin9 = document.getElementById('spin9');
+				// alert( this.value ); // or $(this).val()
+				localStorage.lvlNineValue = this.value;
+				// alert(localStorage.lvlNineValue);
+				document.getElementById('spin9').value = localStorage.lvlNineValue;
+
+				$(this).attr('value',this.value);
+			});
+
+
+			$('#spin10').on('change', function() {
+				var spin10 = document.getElementById('spin10');
+				// alert( this.value ); // or $(this).val()
+				localStorage.lvlTenValue = this.value;
+				// alert(localStorage.lvlTenValue);
+				document.getElementById('spin10').value = localStorage.lvlTenValue;
+
+				$(this).attr('value',this.value);
+			});
+
+			</script>
