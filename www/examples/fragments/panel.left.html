@@ -290,4 +290,36 @@
 				$(this).attr('value',this.value);
 			});
 
+			$('#spellCountTackMax').click(function() {
+				document.getElementById('spin0').value = localStorage.lvlZeroMaxValue;
+				localStorage.lvlZeroValue = localStorage.lvlZeroMaxValue;
+
+				document.getElementById('spin1').value = localStorage.lvlOneMaxValue;
+				localStorage.lvlOneValue = localStorage.lvlOneMaxValue;
+
+				document.getElementById('spin2').value = localStorage.lvlTwoMaxValue;
+				localStorage.lvlTwoValue = localStorage.lvlTwoMaxValue;
+
+				document.getElementById('spin3').value = localStorage.lvlThreeMaxValue;
+				localStorage.lvlThreeValue = localStorage.lvlThreeMaxValue;
+
+				document.getElementById('spin4').value = localStorage.lvlFourMaxValue;
+				localStorage.lvlFourValue = localStorage.lvlFourMaxValue;
+
+				document.getElementById('spin5').value = localStorage.lvlFiveMaxValue;
+				localStorage.lvlFiveValue = localStorage.lvlFiveMaxValue;
+
+				document.getElementById('spin6').value = localStorage.lvlSixMaxValue;
+				localStorage.lvlSixValue = localStorage.lvlSixMaxValue;
+
+				document.getElementById('spin7').value = localStorage.lvlSevenMaxValue;
+				localStorage.lvlSevenValue = localStorage.lvlSevenMaxValue;
+
+				document.getElementById('spin8').value = localStorage.lvlEightMaxValue;
+				localStorage.lvlEightValue = localStorage.lvlEightMaxValue;
+
+				document.getElementById('spin9').value = localStorage.lvlNineMaxValue;
+				localStorage.lvlNineValue = localStorage.lvlNineMaxValue;
+			});
+
 			</script>

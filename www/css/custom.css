@@ -204,11 +204,11 @@ a {
 
 
 .spellBookCounterLabel {
-    width: 42px;
+    width: 38px;
 }
 
 .spellBookPerDayLabel {
-    width: 22px;
+    width: 20px;
 }
 
 .spellBookCounter {
@@ -223,4 +223,10 @@ a {
 
 .spellBookLastCounter {
     padding-bottom: 90px;
+}
+
+#spellCountTackMax {
+    color: white;
+    text-decoration: none;
+    padding-left: 167px;
 }
