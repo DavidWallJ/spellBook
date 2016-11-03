@@ -79,6 +79,15 @@
 
 
 			<script type="text/javascript">
+			$('#spin0').on('change', function() {
+				var spin0 = document.getElementById('spin0');
+				// alert( this.value ); // or $(this).val()
+				localStorage.lvlZeroValue = this.value;
+				// alert(localStorage.lvlZeroValue);
+				document.getElementById('spin0').value = localStorage.lvlZeroValue;
+
+				$(this).attr('value',this.value);
+			});
 
 			$('#spin1').on('change', function() {
 				var spin1 = document.getElementById('spin1');
@@ -181,7 +190,17 @@
 				$(this).attr('value',this.value);
 			});
 
-			$('#spinMax1').on('change', function() {
+			$('#spinSet0').on('change', function() {
+				var spinMax0 = document.getElementById('spinMax0');
+				// alert( this.value ); // or $(this).val()
+				localStorage.lvlZeroMaxValue = this.value;
+				// alert(localStorage.lvlTenValue);
+				document.getElementById('spinMax0').value = localStorage.lvlZeroMaxValue;
+
+				$(this).attr('value',this.value);
+			});
+
+			$('#spinSet1').on('change', function() {
 				var spinMax1 = document.getElementById('spinMax1');
 				// alert( this.value ); // or $(this).val()
 				localStorage.lvlOneMaxValue = this.value;
@@ -191,7 +210,7 @@
 				$(this).attr('value',this.value);
 			});
 
-			$('#spinMax2').on('change', function() {
+			$('#spinSet2').on('change', function() {
 				var spinMax2 = document.getElementById('spinMax2');
 				// alert( this.value ); // or $(this).val()
 				localStorage.lvlTwoMaxValue = this.value;
@@ -201,7 +220,7 @@
 				$(this).attr('value',this.value);
 			});
 
-			$('#spinMax3').on('change', function() {
+			$('#spinSet3').on('change', function() {
 				var spinMax3 = document.getElementById('spinMax3');
 				// alert( this.value ); // or $(this).val()
 				localStorage.lvlThreeMaxValue = this.value;
@@ -211,7 +230,7 @@
 				$(this).attr('value',this.value);
 			});
 
-			$('#spinMax4').on('change', function() {
+			$('#spinSet4').on('change', function() {
 				var spinMax4 = document.getElementById('spinMax4');
 				// alert( this.value ); // or $(this).val()
 				localStorage.lvlFourMaxValue = this.value;
@@ -221,7 +240,7 @@
 				$(this).attr('value',this.value);
 			});
 
-			$('#spinMax5').on('change', function() {
+			$('#spinSet5').on('change', function() {
 				var spinMax5 = document.getElementById('spinMax5');
 				// alert( this.value ); // or $(this).val()
 				localStorage.lvlFiveMaxValue = this.value;
@@ -231,7 +250,7 @@
 				$(this).attr('value',this.value);
 			});
 
-			$('#spinMax6').on('change', function() {
+			$('#spinSet6').on('change', function() {
 				var spinMax6 = document.getElementById('spinMax6');
 				// alert( this.value ); // or $(this).val()
 				localStorage.lvlSixMaxValue = this.value;
@@ -241,7 +260,7 @@
 				$(this).attr('value',this.value);
 			});
 
-			$('#spinMax7').on('change', function() {
+			$('#spinSet7').on('change', function() {
 				var spinMax7 = document.getElementById('spinMax7');
 				// alert( this.value ); // or $(this).val()
 				localStorage.lvlSevenMaxValue = this.value;
@@ -251,7 +270,7 @@
 				$(this).attr('value',this.value);
 			});
 
-			$('#spinMax8').on('change', function() {
+			$('#spinSet8').on('change', function() {
 				var spinMax8 = document.getElementById('spinMax8');
 				// alert( this.value ); // or $(this).val()
 				localStorage.lvlEightMaxValue = this.value;
@@ -261,7 +280,7 @@
 				$(this).attr('value',this.value);
 			});
 
-			$('#spinMax9').on('change', function() {
+			$('#spinSet9').on('change', function() {
 				var spinMax9 = document.getElementById('spinMax9');
 				// alert( this.value ); // or $(this).val()
 				localStorage.lvlNineMaxValue = this.value;

@@ -184,13 +184,14 @@ a {
 
 
 .spellBookSpellSet {
-    width: 50px;
+    width: 35px;
 
 
 }
 
 .spellBookSpellSet div {
     text-align: center;
+    border-color: #e3f1f8;
     /*border:0;*/
     /*background: transparent none;*/
     /*border-radius: inherit;*/
@@ -206,20 +207,21 @@ a {
 
 
 .spellBookCounterLabel{
-    width: 39px;
+    width: 42px;
 }
 
 .spellBookPerDayLabel {
-    width: 31px;
+    width: 27px;
 }
 
 .spellBookCounter {
-    padding-right: 20px;
+
     border: none;
 }
 
 .spellBookSpellSet, .spellBookCounter, .spellBookCounterLabel, .spellBookPerDayLabel {
     display: inline-block;
+    padding-right: 8px;
 }
 
 .spellBookLastCounter {
