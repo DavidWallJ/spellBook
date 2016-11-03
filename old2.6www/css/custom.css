@@ -181,3 +181,49 @@ a {
 .ui-btn.ui-input-clear {
     padding-right: 10px;
 }
+
+
+.spellBookSpellSet {
+    width: 35px;
+
+
+}
+
+.spellBookSpellSet div {
+    text-align: center;
+    border-color: #e3f1f8;
+    /*border:0;*/
+    /*background: transparent none;*/
+    /*border-radius: inherit;*/
+}
+
+.spellBookSpellSet div input {
+    text-align: center;
+}
+
+.spellBookSpellSet div::after {
+    display: none;
+}
+
+
+.spellBookCounterLabel{
+    width: 42px;
+}
+
+.spellBookPerDayLabel {
+    width: 27px;
+}
+
+.spellBookCounter {
+
+    border: none;
+}
+
+.spellBookSpellSet, .spellBookCounter, .spellBookCounterLabel, .spellBookPerDayLabel {
+    display: inline-block;
+    padding-right: 8px;
+}
+
+.spellBookLastCounter {
+    padding-bottom: 90px;
+}
