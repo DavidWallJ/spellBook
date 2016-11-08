@@ -230,3 +230,12 @@ a {
     text-decoration: none;
     padding-left: 167px;
 }
+
+
+/*fix for ipad resolution*/
+@media (min-width: 28em) {
+  .ui-field-contain .ui-controlgroup-controls {
+    float:none;
+    width: 100%;
+  }
+}

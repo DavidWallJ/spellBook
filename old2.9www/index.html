@@ -1,0 +1,500 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>nativeDroid II - jQueryMobile Template</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" />
+		<link rel="stylesheet" href="vendor/waves/waves.min.css" />
+		<link rel="stylesheet" href="vendor/wow/animate.css" />
+		<link rel="stylesheet" href="css/nativedroid2.css" />
+		<link rel="stylesheet" href="css/nativedroid2.color.blue-grey.css" />
+		<link rel="stylesheet" href="css/custom.css" />
+		<meta name="mobile-web-app-capable" content="yes">
+	 	<meta name="apple-mobile-web-app-capable" content="yes" />
+    	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	</head>
+    <body>
+        <!-- start of the main page -->
+		<div data-role="page" id="main">
+
+			<nd2-include data-src="examples/fragments/panel.left.html"></nd2-include>
+
+			<div data-role="panel" id="bottomsheet" data-animate="false" data-position="bottom" data-display="overlay">
+				<nd2-include data-src="examples/fragments/bottom.sheet.html"></nd2-include>
+			</div>
+
+			<div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
+				<a href="#main" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay="1.2s"><i class="zmdi zmdi-face"></i></a>
+				<a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay="0.8s"><i class="zmdi zmdi-check"></i></a>
+				<h1 class="wow fadeIn" data-wow-delay="0.4s">5E Spellbook</h1>
+			</div>
+			<div role="main" class="ui-content" data-inset="false">
+				<!-- <div role="main" class="ui-content wow fadeInDown" data-inset="false">
+						<a href="index2.html" data-role="button" data-icon="grid">All Spells</a>
+						<a href="#" data-role="button" data-icon="bullets">Spellbooks</a>
+						<a href="#" data-role="button" data-icon="gear">Settings</a>
+				</div> -->
+				<!-- <div data-role="collapsibleset" class="ui-content" data-theme="a" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; width:250px;"> -->
+			<p class="spellBookChooseAClass">Choose a class...</p>
+					<div data-role="collapsible"  data-iconpos="right" class=" spellBookClassList wow fadeInDown" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-inset="true">
+					<h2>Bard</h2>
+						<p class="spellBookChooseALevel">Choose a level...</p>
+						<a href="index2.html?class=bard&level=Cantrip">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">0</p>
+							</div>
+						</a>
+						<a href="index2.html?class=bard&level=1">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">1</p>
+							</div>
+						</a>
+						<a href="index2.html?class=bard&level=2">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">2</p>
+							</div>
+						</a>
+						<a href="index2.html?class=bard&level=3">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">3</p>
+							</div>
+						</a>
+						<a href="index2.html?class=bard&level=4">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">4</p>
+							</div>
+						</a>
+						<a href="index2.html?class=bard&level=5">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">5</p>
+							</div>
+						</a>
+						<a href="index2.html?class=bard&level=6">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">6</p>
+							</div>
+						</a>
+						<a href="index2.html?class=bard&level=7">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">7</p>
+							</div>
+						</a>
+						<a href="index2.html?class=bard&level=8">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">8</p>
+							</div>
+						</a>
+						<a href="index2.html?class=bard&level=9">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">9</p>
+							</div>
+						</a>
+						<!-- <a href="index2.html?class=bard&level=ALL">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">All</p>
+							</div>
+						</a> -->
+
+					</div><!-- /collapsible -->
+
+					<div data-role="collapsible"  data-iconpos="right" class="spellBookClassList wow fadeInDown" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-inset="true">
+						<h2>Cleric</h2>
+							<p class="spellBookChooseALevel">Choose a level...</p>
+							<a href="index2.html?class=cleric&level=Cantrip">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">0</p>
+								</div>
+							</a>
+							<a href="index2.html?class=cleric&level=1">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">1</p>
+								</div>
+							</a>
+							<a href="index2.html?class=cleric&level=2">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">2</p>
+								</div>
+							</a>
+							<a href="index2.html?class=cleric&level=3">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">3</p>
+								</div>
+							</a>
+							<a href="index2.html?class=cleric&level=4">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">4</p>
+								</div>
+							</a>
+							<a href="index2.html?class=cleric&level=5">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">5</p>
+								</div>
+							</a>
+							<a href="index2.html?class=cleric&level=6">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">6</p>
+								</div>
+							</a>
+							<a href="index2.html?class=cleric&level=7">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">7</p>
+								</div>
+							</a>
+							<a href="index2.html?class=cleric&level=8">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">8</p>
+								</div>
+							</a>
+							<a href="index2.html?class=cleric&level=9">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">9</p>
+								</div>
+							</a>
+							<!-- <a href="index2.html?class=cleric&level=ALL">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">All</p>
+								</div>
+							</a> -->
+
+						</div><!-- /collapsible -->
+
+					<div data-role="collapsible"  data-iconpos="right" class="spellBookClassList wow fadeInDown" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-inset="true">
+						<h2>Druid</h2>
+							<p class="spellBookChooseALevel">Choose a level...</p>
+							<a href="index2.html?class=druid&level=Cantrip">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">0</p>
+								</div>
+							</a>
+							<a href="index2.html?class=druid&level=1">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">1</p>
+								</div>
+							</a>
+							<a href="index2.html?class=druid&level=2">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">2</p>
+								</div>
+							</a>
+							<a href="index2.html?class=druid&level=3">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">3</p>
+								</div>
+							</a>
+							<a href="index2.html?class=druid&level=4">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">4</p>
+								</div>
+							</a>
+							<a href="index2.html?class=druid&level=5">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">5</p>
+								</div>
+							</a>
+							<a href="index2.html?class=druid&level=6">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">6</p>
+								</div>
+							</a>
+							<a href="index2.html?class=druid&level=7">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">7</p>
+								</div>
+							</a>
+							<a href="index2.html?class=druid&level=8">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">8</p>
+								</div>
+							</a>
+							<a href="index2.html?class=druid&level=9">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">9</p>
+								</div>
+							</a>
+							<!-- <a href="index2.html?class=druid&level=ALL">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">All</p>
+								</div>
+							</a> -->
+
+						</div><!-- /collapsible -->
+
+					<div data-role="collapsible"  data-iconpos="right" class="spellBookClassList wow fadeInDown" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-inset="true">
+						<h2>Paladin</h2>
+							<p class="spellBookChooseALevel">Choose a level...</p>
+							<a href="index2.html?class=paladin&level=1">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">1</p>
+								</div>
+							</a>
+							<a href="index2.html?class=paladin&level=2">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">2</p>
+								</div>
+							</a>
+							<a href="index2.html?class=paladin&level=3">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">3</p>
+								</div>
+							</a>
+							<a href="index2.html?class=paladin&level=4">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">4</p>
+								</div>
+							</a>
+							<a href="index2.html?class=paladin&level=5">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">5</p>
+								</div>
+							</a>
+							<!-- <a href="index2.html?class=paladin&level=ALL">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">All</p>
+								</div>
+							</a> -->
+
+						</div><!-- /collapsible -->
+					<div data-role="collapsible"  data-iconpos="right" class="spellBookClassList wow fadeInDown" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-inset="true">
+						<h2>Ranger</h2>
+							<p class="spellBookChooseALevel">Choose a level...</p>
+							<a href="index2.html?class=ranger&level=1">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">1</p>
+								</div>
+							</a>
+							<a href="index2.html?class=ranger&level=2">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">2</p>
+								</div>
+							</a>
+							<a href="index2.html?class=ranger&level=3">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">3</p>
+								</div>
+							</a>
+							<a href="index2.html?class=ranger&level=4">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">4</p>
+								</div>
+							</a>
+							<a href="index2.html?class=ranger&level=5">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">5</p>
+								</div>
+							</a>
+							<!-- <a href="index2.html?class=ranger&level=ALL">
+								<div class="levelOneChip silver">
+									<p class="levelOneChipHeading">All</p>
+								</div>
+							</a> -->
+						</div><!-- /collapsible -->
+					<div data-role="collapsible"  data-iconpos="right" class="spellBookClassList wow fadeInDown" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-inset="true">
+					<h2>Sorcerer</h2>
+						<p class="spellBookChooseALevel">Choose a level...</p>
+						<a href="index2.html?class=sorcerer&level=Cantrip">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">0</p>
+							</div>
+						</a>
+						<a href="index2.html?class=sorcerer&level=1">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">1</p>
+							</div>
+						</a>
+						<a href="index2.html?class=sorcerer&level=2">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">2</p>
+							</div>
+						</a>
+						<a href="index2.html?class=sorcerer&level=3">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">3</p>
+							</div>
+						</a>
+						<a href="index2.html?class=sorcerer&level=4">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">4</p>
+							</div>
+						</a>
+						<a href="index2.html?class=sorcerer&level=5">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">5</p>
+							</div>
+						</a>
+						<a href="index2.html?class=sorcerer&level=6">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">6</p>
+							</div>
+						</a>
+						<a href="index2.html?class=sorcerer&level=7">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">7</p>
+							</div>
+						</a>
+						<a href="index2.html?class=sorcerer&level=8">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">8</p>
+							</div>
+						</a>
+						<a href="index2.html?class=sorcerer&level=9">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">9</p>
+							</div>
+						</a>
+						<!-- <a href="index2.html?class=sorcerer&level=ALL">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">All</p>
+							</div>
+						</a> -->
+
+					</div><!-- /collapsible -->
+					<div data-role="collapsible"  data-iconpos="right" class="spellBookClassList wow fadeInDown" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-inset="true">
+					<h2>Warlock</h2>
+						<p class="spellBookChooseALevel">Choose a level...</p>
+						<a href="index2.html?class=warlock&level=Cantrip">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">0</p>
+							</div>
+						</a>
+						<a href="index2.html?class=warlock&level=1">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">1</p>
+							</div>
+						</a>
+						<a href="index2.html?class=warlock&level=2">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">2</p>
+							</div>
+						</a>
+						<a href="index2.html?class=warlock&level=3">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">3</p>
+							</div>
+						</a>
+						<a href="index2.html?class=warlock&level=4">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">4</p>
+							</div>
+						</a>
+						<a href="index2.html?class=warlock&level=5">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">5</p>
+							</div>
+						</a>
+						<a href="index2.html?class=warlock&level=6">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">6</p>
+							</div>
+						</a>
+						<a href="index2.html?class=warlock&level=7">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">7</p>
+							</div>
+						</a>
+						<a href="index2.html?class=warlock&level=8">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">8</p>
+							</div>
+						</a>
+						<a href="index2.html?class=warlock&level=9">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">9</p>
+							</div>
+						</a>
+						<!-- <a href="index2.html?class=warlock&level=ALL">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">All</p>
+							</div>
+						</a> -->
+
+					</div><!-- /collapsible -->
+					<div data-role="collapsible"  data-iconpos="right" class="spellBookClassList wow fadeInDown" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-inset="true">
+					<h2>Wizard</h2>
+						<p class="spellBookChooseALevel">Choose a level...</p>
+						<a href="index2.html?class=wizard&level=Cantrip">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">0</p>
+							</div>
+						</a>
+						<a href="index2.html?class=wizard&level=1">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">1</p>
+							</div>
+						</a>
+						<a href="index2.html?class=wizard&level=2">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">2</p>
+							</div>
+						</a>
+						<a href="index2.html?class=wizard&level=3">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">3</p>
+							</div>
+						</a>
+						<a href="index2.html?class=wizard&level=4">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">4</p>
+							</div>
+						</a>
+						<a href="index2.html?class=wizard&level=5">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">5</p>
+							</div>
+						</a>
+						<a href="index2.html?class=wizard&level=6">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">6</p>
+							</div>
+						</a>
+						<a href="index2.html?class=wizard&level=7">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">7</p>
+							</div>
+						</a>
+						<a href="index2.html?class=wizard&level=8">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">8</p>
+							</div>
+						</a>
+						<a href="index2.html?class=wizard&level=9">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">9</p>
+							</div>
+						</a>
+						<!-- <a href="index2.html?class=wizard&level=ALL">
+							<div class="levelOneChip silver">
+								<p class="levelOneChipHeading">All</p>
+							</div>
+						</a> -->
+
+					</div><!-- /collapsible -->
+
+			</div>
+		</div>
+		<!-- main page -->
+
+
+
+		<script type="text/javascript" src="cordova.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+		<script src="js/jquery-2.1.4/jquery-2.1.4.js"></script>
+		<!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> -->
+		<script src="js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script> -->
+		<script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript" src="js/spellCounter.js"></script>
+		<script src="vendor/waves/waves.min.js"></script>
+		<script src="vendor/wow/wow.min.js"></script>
+		<script src="js/nativedroid2.js"></script>
+		<script src="nd2settings.js"></script>
+		<script src="js/spellDatabase.js"></script>
+		<script src="js/custom.js"></script>
+
+
+
+
+
+	</body>
+</html>
