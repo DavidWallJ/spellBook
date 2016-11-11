@@ -37,27 +37,27 @@ $(document).on("pageshow","#main",function(){
 setTimeout(
   function()
   {
-      $('#spin0').attr('value',localStorage.lvl0Value);
-      $('#spin1').attr('value',localStorage.lvl1Value);
-      $('#spin2').attr('value',localStorage.lvl2Value);
-      $('#spin3').attr('value',localStorage.lvl3Value);
-      $('#spin4').attr('value',localStorage.lvl4Value);
-      $('#spin5').attr('value',localStorage.lvl5Value);
-      $('#spin6').attr('value',localStorage.lvl6Value);
-      $('#spin7').attr('value',localStorage.lvl7Value);
-      $('#spin8').attr('value',localStorage.lvl8Value);
-      $('#spin9').attr('value',localStorage.lvl9Value);
+      $('#spin0').attr('value',localStorage.lvlZeroValue);
+      $('#spin1').attr('value',localStorage.lvlOneValue);
+      $('#spin2').attr('value',localStorage.lvlTwoValue);
+      $('#spin3').attr('value',localStorage.lvlThreeValue);
+      $('#spin4').attr('value',localStorage.lvlFourValue);
+      $('#spin5').attr('value',localStorage.lvlFiveValue);
+      $('#spin6').attr('value',localStorage.lvlSixValue);
+      $('#spin7').attr('value',localStorage.lvlSevenValue);
+      $('#spin8').attr('value',localStorage.lvlEightValue);
+      $('#spin9').attr('value',localStorage.lvlNineValue);
 
-      $('#spinSet0').attr('value',localStorage.lvl0MaxValue);
-      $('#spinSet1').attr('value',localStorage.lvl1MaxValue);
-      $('#spinSet2').attr('value',localStorage.lvl2MaxValue);
-      $('#spinSet3').attr('value',localStorage.lvl3MaxValue);
-      $('#spinSet4').attr('value',localStorage.lvl4MaxValue);
-      $('#spinSet5').attr('value',localStorage.lvl5MaxValue);
-      $('#spinSet6').attr('value',localStorage.lvl6MaxValue);
-      $('#spinSet7').attr('value',localStorage.lvl7MaxValue);
-      $('#spinSet8').attr('value',localStorage.lvl8MaxValue);
-      $('#spinSet9').attr('value',localStorage.lvl9MaxValue);
+      $('#spinSet0').attr('value',localStorage.lvlZeroMaxValue);
+      $('#spinSet1').attr('value',localStorage.lvlOneMaxValue);
+      $('#spinSet2').attr('value',localStorage.lvlTwoMaxValue);
+      $('#spinSet3').attr('value',localStorage.lvlThreeMaxValue);
+      $('#spinSet4').attr('value',localStorage.lvlFourMaxValue);
+      $('#spinSet5').attr('value',localStorage.lvlFiveMaxValue);
+      $('#spinSet6').attr('value',localStorage.lvlSixMaxValue);
+      $('#spinSet7').attr('value',localStorage.lvlSevenMaxValue);
+      $('#spinSet8').attr('value',localStorage.lvlEightMaxValue);
+      $('#spinSet9').attr('value',localStorage.lvlNineMaxValue);
 
   }, 500);
 });

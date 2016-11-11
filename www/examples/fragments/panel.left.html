@@ -5,61 +5,61 @@
 //when spell counter value is changed
 	$('#spin0').on('change', function() {
 		var currentValue = $(this).val();
-		localStorage.lvlZeroValue = currentValue;
+		localStorage.lvl0Value = currentValue;
 		$(this).attr('value', currentValue);
 	});
 
 	$('#spin1').on('change', function() {
 		var currentValue = $(this).val();
-		localStorage.lvlOneValue = currentValue;
+		localStorage.lvl1Value = currentValue;
 		$(this).attr('value', currentValue);
 	});
 
 	$('#spin2').on('change', function() {
 		var currentValue = $(this).val();
-		localStorage.lvlTwoValue = currentValue;
+		localStorage.lvl2Value = currentValue;
 		$(this).attr('value', currentValue);
 	});
 
 	$('#spin3').on('change', function() {
 		var currentValue = $(this).val();
-		localStorage.lvlThreeValue = currentValue;
+		localStorage.lvl3Value = currentValue;
 		$(this).attr('value', currentValue);
 	});
 
 	$('#spin4').on('change', function() {
 		var currentValue = $(this).val();
-		localStorage.lvlFourValue = currentValue;
+		localStorage.lvl4Value = currentValue;
 		$(this).attr('value', currentValue);
 	});
 
 	$('#spin5').on('change', function() {
 		var currentValue = $(this).val();
-		localStorage.lvlFiveValue = currentValue;
+		localStorage.lvl5Value = currentValue;
 		$(this).attr('value', currentValue);
 	});
 
 	$('#spin6').on('change', function() {
 		var currentValue = $(this).val();
-		localStorage.lvlSixValue = currentValue;
+		localStorage.lvl6Value = currentValue;
 		$(this).attr('value', currentValue);
 	});
 
 	$('#spin7').on('change', function() {
 		var currentValue = $(this).val();
-		localStorage.lvlSevenValue = currentValue;
+		localStorage.lvl7Value = currentValue;
 		$(this).attr('value', currentValue);
 	});
 
 	$('#spin8').on('change', function() {
 		var currentValue = $(this).val();
-		localStorage.lvlEightValue = currentValue;
+		localStorage.lvl8Value = currentValue;
 		$(this).attr('value', currentValue);
 	});
 
 	$('#spin9').on('change', function() {
 		var currentValue = $(this).val();
-		localStorage.lvlNineValue = currentValue;
+		localStorage.lvl9Value = currentValue;
 		$(this).attr('value', currentValue);
 	});
 
@@ -69,13 +69,13 @@
 	$('#spinSet0').on('change', function() {
 		var maxValue = $(this).val();
 			if(maxValue !== "" && maxValue !== null) {
-			localStorage.lvlZeroMaxValue = maxValue;
+			localStorage.lvl0MaxValue = maxValue;
 			$(this).attr('value', maxValue);
 		} else {
 			$(this).attr('value', "0");
 			$('#spin0').attr('max', "0");
-			localStorage.lvlZeroMaxValue = "0";
-			localStorage.lvlZeroValue = "0";
+			localStorage.lvl0MaxValue = "0";
+			localStorage.lvl0Value = "0";
 
 		}
 	});
@@ -83,56 +83,56 @@
 
 	$('#spinSet1').on('change', function() {
 		var maxValue = $(this).val();
-			if(maxValue !== "" && maxValue !== null) {
-			localStorage.lvlOneMaxValue = maxValue;
+			if(maxValue !== "" && maxValue !== null && maxValue !== 0) {
+			localStorage.lvl1MaxValue = maxValue;
 			$(this).attr('value', maxValue);
 		} else {
 			$(this).attr('value', "0");
 			$('#spin2').attr('max', "0");
-			localStorage.lvlOneMaxValue = "0";
-			localStorage.lvlOneValue = "0";
+			localStorage.lvl1MaxValue = "0";
+			localStorage.lvl1Value = "0";
 
 		}
 	});
 
 	$('#spinSet2').on('change', function() {
 		var maxValue = $(this).val();
-			if(maxValue !== "" && maxValue !== null) {
-			localStorage.lvlTwoMaxValue = maxValue;
+			if(maxValue !== "" && maxValue !== null && maxValue !== 0) {
+			localStorage.lvl2MaxValue = maxValue;
 			$(this).attr('value', maxValue);
 		} else {
 			$(this).attr('value', "0");
 			$('#spin2').attr('max', "0");
-			localStorage.lvlTwoMaxValue = "0";
-			localStorage.lvlTwoValue = "0";
+			localStorage.lvl2MaxValue = "0";
+			localStorage.lvl2Value = "0";
 
 		}
 	});
 
 	$('#spinSet3').on('change', function() {
 		var maxValue = $(this).val();
-			if(maxValue !== "" && maxValue !== null) {
-			localStorage.lvlThreeMaxValue = maxValue;
+			if(maxValue !== "" && maxValue !== null && maxValue !== 0) {
+			localStorage.lvl3MaxValue = maxValue;
 			$(this).attr('value', maxValue);
 		} else {
 			$(this).attr('value', "0");
 			$('#spin3').attr('max', "0");
-			localStorage.lvlThreeMaxValue = "0";
-			localStorage.lvlThreeValue = "0";
+			localStorage.lvl3MaxValue = "0";
+			localStorage.lvl3Value = "0";
 
 		}
 	});
 
 	$('#spinSet4').on('change', function() {
 		var maxValue = $(this).val();
-			if(maxValue !== "" && maxValue !== null) {
-			localStorage.lvlFourMaxValue = maxValue;
+			if(maxValue !== "" && maxValue !== null && maxValue !== 0) {
+			localStorage.lvl4MaxValue = maxValue;
 			$(this).attr('value', maxValue);
 		} else {
 			$(this).attr('value', "0");
 			$('#spin4').attr('max', "0");
-			localStorage.lvlFourMaxValue = "0";
-			localStorage.lvlFourValue = "0";
+			localStorage.lvl4MaxValue = "0";
+			localStorage.lvl4Value = "0";
 
 		}
 	});
@@ -140,13 +140,13 @@
 	$('#spinSet5').on('change', function() {
 		var maxValue = $(this).val();
 			if(maxValue !== "" && maxValue !== null) {
-			localStorage.lvlFiveMaxValue = maxValue;
+			localStorage.lvl5MaxValue = maxValue;
 			$(this).attr('value', maxValue);
 		} else {
 			$(this).attr('value', "0");
 			$('#spin5').attr('max', "0");
-			localStorage.lvlFiveMaxValue = "0";
-			localStorage.lvlFiveValue = "0";
+			localStorage.lvl5MaxValue = "0";
+			localStorage.lvl5Value = "0";
 
 		}
 	});
@@ -154,13 +154,13 @@
 	$('#spinSet6').on('change', function() {
 		var maxValue = $(this).val();
 			if(maxValue !== "" && maxValue !== null) {
-			localStorage.lvlSixMaxValue = maxValue;
+			localStorage.lvl6MaxValue = maxValue;
 			$(this).attr('value', maxValue);
 		} else {
 			$(this).attr('value', "0");
 			$('#spin6').attr('max', "0");
-			localStorage.lvlSixMaxValue = "0";
-			localStorage.lvlSixValue = "0";
+			localStorage.lvl6MaxValue = "0";
+			localStorage.lvl6Value = "0";
 
 		}
 	});
@@ -168,13 +168,13 @@
 	$('#spinSet7').on('change', function() {
 		var maxValue = $(this).val();
 			if(maxValue !== "" && maxValue !== null) {
-			localStorage.lvlSevenMaxValue = maxValue;
+			localStorage.lvl7MaxValue = maxValue;
 			$(this).attr('value', maxValue);
 		} else {
 			$(this).attr('value', "0");
 			$('#spin7').attr('max', "0");
-			localStorage.lvlSevenMaxValue = "0";
-			localStorage.lvlSevenValue = "0";
+			localStorage.lvl7MaxValue = "0";
+			localStorage.lvl7Value = "0";
 
 		}
 	});
@@ -182,13 +182,13 @@
 	$('#spinSet8').on('change', function() {
 		var maxValue = $(this).val();
 			if(maxValue !== "" && maxValue !== null) {
-			localStorage.lvlEightMaxValue = maxValue;
+			localStorage.lvl8MaxValue = maxValue;
 			$(this).attr('value', maxValue);
 		} else {
 			$(this).attr('value', "0");
 			$('#spin8').attr('max', "0");
-			localStorage.lvlEightMaxValue = "0";
-			localStorage.lvlEightValue = "0";
+			localStorage.lvl8MaxValue = "0";
+			localStorage.lvl8Value = "0";
 
 		}
 	});
@@ -196,13 +196,13 @@
 	$('#spinSet9').on('change', function() {
 		var maxValue = $(this).val();
 			if(maxValue !== "" && maxValue !== null) {
-			localStorage.lvlNineMaxValue = maxValue;
+			localStorage.lvl9MaxValue = maxValue;
 			$(this).attr('value', maxValue);
 		} else {
 			$(this).attr('value', "0");
 			$('#spin9').attr('max', "0");
-			localStorage.lvlNineMaxValue = "0";
-			localStorage.lvlNineValue = "0";
+			localStorage.lvl9MaxValue = "0";
+			localStorage.lvl9Value = "0";
 
 		}
 	});
@@ -211,76 +211,84 @@
 //applying max values to counter values
 	$('#spellCountTackMax').click(function() {
 
+	jQuery.fn.onTackSet = function(numberID){
+
+	   return this.each(function(){
+
+		   if(localStorage['lvl'+numberID+'MaxValue'] == "" || localStorage['lvl'+numberID+'MaxValue'] == null || localStorage['lvl'+numberID+'MaxValue'] == 0 ) {
+
+			   alert("not else ran");
+			   $(this).attr('value', "0");
+			   $('#spin' + numberID).attr('value', "0");
+			   localStorage['lvl'+numberID+'Value'] = "0";
+			   localStorage['lvl'+numberID+'MaxValue'] = "0";
 
 
-		jQuery.fn.onTackSet = function(counterValue, maxValue, spinSetID){
 
-			return this.each(function(){
+		   } else {
+			   alert("else ran");
+			   $(this).attr('value', localStorage['lvl'+numberID+'MaxValue']);
+			   $(this).attr('max', localStorage['lvl'+numberID+'MaxValue']);
 
+			   localStorage['lvl'+numberID+'Value'] = localStorage['lvl'+numberID+'MaxValue'];
 
-				if(maxValue !== "" || maxValue !== null) {
+		   }
+	   });
+   };
 
-					$(this).attr('value', maxValue);
-					$(this).attr('max', maxValue);
+		$("#spin0").onTackSet(0);
+		$("#spin1").onTackSet(1);
+		$("#spin2").onTackSet(2);
+		$("#spin3").onTackSet(3);
+		$("#spin4").onTackSet(4);
+		$("#spin5").onTackSet(5);
+		$("#spin6").onTackSet(6);
+		$("#spin7").onTackSet(7);
+		$("#spin8").onTackSet(8);
+		$("#spin9").onTackSet(9);
+		// $("#spin1").onTackSet("lvl1Value", 1);
+		//
+		// $("#spin2").onTackSet("lvl2Value", 2);
+		//
+		// $("#spin3").onTackSet("lvl3Value", 3);
+		//
+		// $("#spin4").onTackSet("lvl4Value", 4);
+		//
+		// $("#spin5").onTackSet("lvl5Value", 5);
+		//
+		// $("#spin6").onTackSet("lvl6Value", 6);
+		//
+		// $("#spin7").onTackSet("lvl7Value", 7);
+		//
+		// $("#spin8").onTackSet("lvl8Value", 8);
+		//
+		// $("#spin9").onTackSet("lvl9Value", 9);
 
-				} else {
-					$(this).attr('value', "0");
-					$(spinSetID).attr('value', "0");
-					counterValue = "0";
-					maxValue = "0";
-
-				}
-			});
-		};
-
-		$("#spin0").onTackSet(localStorage.lvlZeroValue,localStorage.lvlZeroMaxValue, "spinSet0");
-
-		localStorage.lvlZeroValue = localStorage.lvlZeroMaxValue;
-
-
-		$("#spin1").onTackSet(localStorage.lvlOneValue,localStorage.lvlOneMaxValue, "spinSet1");
-
-		localStorage.lvlOneValue = localStorage.lvlOneMaxValue;
-
-
-		$("#spin2").onTackSet(localStorage.lvlTwoValue,localStorage.lvlTwoMaxValue, "spinSet2");
-
-		localStorage.lvlTwoValue = localStorage.lvlTwoMaxValue;
-
-
-		$("#spin3").onTackSet(localStorage.lvlThreeValue,localStorage.lvlThreeMaxValue, "spinSet3");
-
-		localStorage.lvlThreeValue = localStorage.lvlThreeMaxValue;
-
-
-		$("#spin4").onTackSet(localStorage.lvlFourValue,localStorage.lvlFourMaxValue, "spinSet4");
-
-		localStorage.lvlFourValue = localStorage.lvlFourMaxValue;
-
-
-		$("#spin5").onTackSet(localStorage.lvlFiveValue,localStorage.lvlFiveMaxValue, "spinSet5");
-
-		localStorage.lvlFiveValue = localStorage.lvlFiveMaxValue;
-
-
-		$("#spin6").onTackSet(localStorage.lvlSixValue,localStorage.lvlSixMaxValue, "spinSet6");
-
-		localStorage.lvlSixValue = localStorage.lvlSixMaxValue;
-
-
-		$("#spin7").onTackSet(localStorage.lvlSevenValue,localStorage.lvlSevenMaxValue, "spinSet7");
-
-		localStorage.lvlSevenValue = localStorage.lvlSevenMaxValue;
-
-
-		$("#spin8").onTackSet(localStorage.lvlEightValue,localStorage.lvlEightMaxValue, "spinSet8");
-
-		localStorage.lvlEightValue = localStorage.lvlEightMaxValue;
-
-
-		$("#spin9").onTackSet(localStorage.lvlNineValue,localStorage.lvlNineMaxValue, "spinSet9");
-
-		localStorage.lvlNineValue = localStorage.lvlNineMaxValue;
+		// $("#spin1").onTackSet(localStorage.lvl1Value,localStorage.lvl1MaxValue, 1);
+		//
+		//
+		// $("#spin2").onTackSet(localStorage.lvl2Value,localStorage.lvl2MaxValue, 2);
+		//
+		//
+		// $("#spin3").onTackSet(localStorage.lvl3Value,localStorage.lvl3MaxValue, 3);
+		//
+		//
+		// $("#spin4").onTackSet(localStorage.lvl4Value,localStorage.lvl4MaxValue, 4);
+		//
+		//
+		// $("#spin5").onTackSet(localStorage.lvl5Value,localStorage.lvl5MaxValue, 5);
+		//
+		//
+		// $("#spin6").onTackSet(localStorage.lvl6Value,localStorage.lvl6MaxValue, 6);
+		//
+		//
+		// $("#spin7").onTackSet(localStorage.lvl7Value,localStorage.lvl7MaxValue, 7);
+		//
+		//
+		// $("#spin8").onTackSet(localStorage.lvl8Value,localStorage.lvl8MaxValue, 8);
+		//
+		//
+		// $("#spin9").onTackSet(localStorage.lvl9Value,localStorage.lvl9MaxValue, 9);
 
 	});
 
