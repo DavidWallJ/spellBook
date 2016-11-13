@@ -1,0 +1,191 @@
+<!-- panel left -->
+<script type="text/javascript">
+
+	//when spell counter value is changed
+	for(i=0;i<10;i++){
+		$('#spin' + i).on('change', function() {
+	  	  var currentValue = $(this).val();
+	  	  localStorage['lvl'+i+'Value'] = currentValue;
+	  	  $(this).attr('value', currentValue);
+	    });
+	}
+
+
+	//when spell max value is changed
+	$('#spinSet0').on('change', function() {
+		var maxValue = $(this).val();
+			if(maxValue !== "" && maxValue !== null) {
+			localStorage.lvl0MaxValue = maxValue;
+			$(this).attr('value', maxValue);
+		} else {
+			$(this).attr('value', "0");
+			$('#spin0').attr('max', "0");
+			localStorage.lvl0MaxValue = "0";
+			localStorage.lvl0Value = "0";
+
+		}
+	});
+
+
+	$('#spinSet1').on('change', function() {
+		var maxValue = $(this).val();
+			if(maxValue !== "" && maxValue !== null && maxValue !== 0) {
+			localStorage.lvl1MaxValue = maxValue;
+			$(this).attr('value', maxValue);
+		} else {
+			$(this).attr('value', "0");
+			$('#spin2').attr('max', "0");
+			localStorage.lvl1MaxValue = "0";
+			localStorage.lvl1Value = "0";
+
+		}
+	});
+
+	$('#spinSet2').on('change', function() {
+		var maxValue = $(this).val();
+			if(maxValue !== "" && maxValue !== null && maxValue !== 0) {
+			localStorage.lvl2MaxValue = maxValue;
+			$(this).attr('value', maxValue);
+		} else {
+			$(this).attr('value', "0");
+			$('#spin2').attr('max', "0");
+			localStorage.lvl2MaxValue = "0";
+			localStorage.lvl2Value = "0";
+
+		}
+	});
+
+	$('#spinSet3').on('change', function() {
+		var maxValue = $(this).val();
+			if(maxValue !== "" && maxValue !== null && maxValue !== 0) {
+			localStorage.lvl3MaxValue = maxValue;
+			$(this).attr('value', maxValue);
+		} else {
+			$(this).attr('value', "0");
+			$('#spin3').attr('max', "0");
+			localStorage.lvl3MaxValue = "0";
+			localStorage.lvl3Value = "0";
+
+		}
+	});
+
+	$('#spinSet4').on('change', function() {
+		var maxValue = $(this).val();
+			if(maxValue !== "" && maxValue !== null && maxValue !== 0) {
+			localStorage.lvl4MaxValue = maxValue;
+			$(this).attr('value', maxValue);
+		} else {
+			$(this).attr('value', "0");
+			$('#spin4').attr('max', "0");
+			localStorage.lvl4MaxValue = "0";
+			localStorage.lvl4Value = "0";
+
+		}
+	});
+
+	$('#spinSet5').on('change', function() {
+		var maxValue = $(this).val();
+			if(maxValue !== "" && maxValue !== null) {
+			localStorage.lvl5MaxValue = maxValue;
+			$(this).attr('value', maxValue);
+		} else {
+			$(this).attr('value', "0");
+			$('#spin5').attr('max', "0");
+			localStorage.lvl5MaxValue = "0";
+			localStorage.lvl5Value = "0";
+
+		}
+	});
+
+	$('#spinSet6').on('change', function() {
+		var maxValue = $(this).val();
+			if(maxValue !== "" && maxValue !== null) {
+			localStorage.lvl6MaxValue = maxValue;
+			$(this).attr('value', maxValue);
+		} else {
+			$(this).attr('value', "0");
+			$('#spin6').attr('max', "0");
+			localStorage.lvl6MaxValue = "0";
+			localStorage.lvl6Value = "0";
+
+		}
+	});
+
+	$('#spinSet7').on('change', function() {
+		var maxValue = $(this).val();
+			if(maxValue !== "" && maxValue !== null) {
+			localStorage.lvl7MaxValue = maxValue;
+			$(this).attr('value', maxValue);
+		} else {
+			$(this).attr('value', "0");
+			$('#spin7').attr('max', "0");
+			localStorage.lvl7MaxValue = "0";
+			localStorage.lvl7Value = "0";
+
+		}
+	});
+
+	$('#spinSet8').on('change', function() {
+		var maxValue = $(this).val();
+			if(maxValue !== "" && maxValue !== null) {
+			localStorage.lvl8MaxValue = maxValue;
+			$(this).attr('value', maxValue);
+		} else {
+			$(this).attr('value', "0");
+			$('#spin8').attr('max', "0");
+			localStorage.lvl8MaxValue = "0";
+			localStorage.lvl8Value = "0";
+
+		}
+	});
+
+	$('#spinSet9').on('change', function() {
+		var maxValue = $(this).val();
+			if(maxValue !== "" && maxValue !== null) {
+			localStorage.lvl9MaxValue = maxValue;
+			$(this).attr('value', maxValue);
+		} else {
+			$(this).attr('value', "0");
+			$('#spin9').attr('max', "0");
+			localStorage.lvl9MaxValue = "0";
+			localStorage.lvl9Value = "0";
+
+		}
+	});
+
+
+	//applying max values to counter values
+	$('#spellCountTackMax').click(function() {
+
+			jQuery.fn.onTackSet = function(numberID){
+
+			   return this.each(function(){
+
+				   if(localStorage['lvl'+numberID+'MaxValue'] == "" || localStorage['lvl'+numberID+'MaxValue'] == null || localStorage['lvl'+numberID+'MaxValue'] == 0 ) {
+
+					   $(this).attr('value', "0");
+					   $('#spin' + numberID).attr('value', "0");
+					   localStorage['lvl'+numberID+'Value'] = "0";
+					   localStorage['lvl'+numberID+'MaxValue'] = "0";
+
+
+
+				   } else {
+
+					   $(this).attr('value', localStorage['lvl'+numberID+'MaxValue']);
+					   $(this).attr('max', localStorage['lvl'+numberID+'MaxValue']);
+					   localStorage['lvl'+numberID+'Value'] = localStorage['lvl'+numberID+'MaxValue'];
+
+				   }
+			   });
+		   };
+
+
+		   for(i=0;i<10;i++){
+			  $("#spin" + i).onTackSet(i);
+		  }
+
+
+	});
+
+</script>

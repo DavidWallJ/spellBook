@@ -37,7 +37,7 @@ $(document).on("pageshow","#main",function(){
 setTimeout(
   function()
   {
-      $('#spin0').attr('value',localStorage.lvl0Value);
+  $('#spin0').attr('value',localStorage.lvl0Value);
   $('#spin1').attr('value',localStorage.lvl1Value);
   $('#spin2').attr('value',localStorage.lvl2Value);
   $('#spin3').attr('value',localStorage.lvl3Value);
@@ -124,10 +124,24 @@ $(document).on("pageshow","#index2",function(){ // When entering pagetwo
         e.preventDefault();
     });
 
+    //this gets you the spell list ordered by class
+    insertRecord();
+    showRecords();
+});
+
+
+
+
+$(document).on("pageshow","#index3",function(){ // When entering pagetwo
+    //assign functions to buttons on page index3
+    // $("#btnOrderByLevel").click(showRecordsListByLevel);
+    $("#btnOrderByName").click(showRecordsList);
 
     insertRecord();
-    showRecordsByClassStatement(selectAllStatement);
+    showRecordsList('SELECT * FROM spell');
 });
+
+
 
 
 //drop table on back button to ensure no duplicate items
