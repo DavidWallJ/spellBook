@@ -729,14 +729,13 @@ function showRecordsByDuration() // Function For Retrive data from Database Disp
 
 }
 
-
-function showRecordsList(theListStatement){
-
+//All spells list pages
+function showRecordsList(){
     $("#results").html('');
 
     db.transaction(function (tx) {
 
-        tx.executeSql(theListStatement, [], function (tx, result) {
+        tx.executeSql("SELECT * FROM spell", [], function (tx, result) {
 
             dataset = result.rows;
 
@@ -747,9 +746,8 @@ function showRecordsList(theListStatement){
                 var spellNameString = item['name'];
                 var spellNameStringSplit = spellNameString.split(" ");
 
-                var linkeditdelete = '<li><a href="#">'+item['name']+'<span class="spellSortListsSpanSpan">'+item['level']+'</span><span class="spellSortListsSpan">Lvl: </span></a></li>';
+                var linkeditdelete = '<li><a href="index4.html?name='+item['name']+'">'+item['name']+'<span class="spellSortListsSpanSpan">'+item['level']+'</span><span class="spellSortListsSpan">Lvl: </span></a></li>';
 
-                // $("#results").append(linkeditdelete);
                 $("#results").append(linkeditdelete).trigger('create');
             }
 
@@ -761,7 +759,63 @@ function showRecordsList(theListStatement){
 
 }
 
+function showRecordsListByLevel(){
 
+    $("#results").html('');
+
+    db.transaction(function (tx) {
+
+        tx.executeSql("SELECT * FROM spell ORDER BY CASE WHEN level = 'Cantrip' THEN 0 WHEN level = 1 THEN 1 WHEN level = 2 THEN 2 WHEN level = 3 THEN 3 WHEN level = 4 THEN 4 WHEN level = 5 THEN 5 WHEN level = 6 THEN 6 WHEN level = 7 THEN 7 WHEN level = 8 THEN 8 WHEN level = 9 THEN 9 ELSE 20 END", [], function (tx, result) {
+
+            dataset = result.rows;
+
+            for (var i = 0, item = null; i < dataset.length; i++) {
+
+                item = dataset.item(i);
+
+                var spellNameString = item['name'];
+                var spellNameStringSplit = spellNameString.split(" ");
+
+                var linkeditdelete = '<li><a href="index4.html?name='+item['name']+'">'+item['name']+'<span class="spellSortListsSpanSpan">'+item['level']+'</span><span class="spellSortListsSpan">Lvl: </span></a></li>';
+
+                $("#results").append(linkeditdelete).trigger('create');
+            }
+                $('#results').listview('refresh');
+
+        });
+
+    });
+
+}
+
+
+function showSingleRecord(){
+    $("#results").html('');
+
+    db.transaction(function (tx) {
+
+        tx.executeSql(selectAllStatement, [], function (tx, result) {
+
+            dataset = result.rows;
+
+            for (var i = 0, item = null; i < dataset.length; i++) {
+
+                item = dataset.item(i);
+
+                var spellNameString = item['name'];
+                var spellNameStringSplit = spellNameString.split(" ");
+
+                var linkeditdelete = '<li><a href="index4.html?name='+item['name']+'">'+item['name']+'<span class="spellSortListsSpanSpan">'+item['level']+'</span><span class="spellSortListsSpan">Lvl: </span></a></li>';
+
+                $("#results").append(linkeditdelete).trigger('create');
+            }
+                $('#results').listview('refresh');
+
+        });
+
+    });
+
+}
 //ensures that there are no duplicates db entries created
 $(document).ready(function () // Call function when page is ready for load..
 

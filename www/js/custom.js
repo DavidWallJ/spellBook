@@ -134,13 +134,35 @@ $(document).on("pageshow","#index2",function(){ // When entering pagetwo
 
 $(document).on("pageshow","#index3",function(){ // When entering pagetwo
     //assign functions to buttons on page index3
-    // $("#btnOrderByLevel").click(showRecordsListByLevel);
+    $("#btnOrderByLevel").click(showRecordsListByLevel);
     $("#btnOrderByName").click(showRecordsList);
 
+    $('.spellSortNav ul li button').click(function(e) {
+        $('.spellSortNav ul li button').removeClass('ui-btn-active');
+
+        var $parent = $(this);
+        if (!$parent.hasClass('ui-btn-active')) {
+            $parent.addClass('ui-btn-active');
+        }
+        e.preventDefault();
+    });
+
     insertRecord();
-    showRecordsList('SELECT * FROM spell');
+    showRecordsList();
 });
 
+
+$(document).on("pageshow","#index4",function(){ // When entering pagetwo
+    //assign functions to buttons on page index3
+    
+    var spellName = getUrlParameter('name');
+    alert(spellName);
+
+    selectAllStatement = 'SELECT * FROM spell WHERE name = "' + spellName + '"';
+    alert(selectAllStatement);
+    insertRecord();
+    showRecords();
+});
 
 
 
