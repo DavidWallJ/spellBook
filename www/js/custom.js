@@ -155,13 +155,15 @@ $(document).on("pageshow","#index3",function(){ // When entering pagetwo
 $(document).on("pageshow","#index4",function(){ // When entering pagetwo
     //assign functions to buttons on page index3
     
+    $("#spellBookBackButton").click(dropTable);
+
     var spellName = getUrlParameter('name');
-    alert(spellName);
+
 
     selectAllStatement = 'SELECT * FROM spell WHERE name = "' + spellName + '"';
-    alert(selectAllStatement);
-    insertRecord();
-    showRecords();
+
+    // insertRecord();
+    showSingleRecord();
 });
 
 

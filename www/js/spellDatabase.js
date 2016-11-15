@@ -539,6 +539,8 @@ function dropTable() // Function Call when Drop Button Click.. Talbe will be dro
 
 }
 
+
+
 // function loadRecord(i) // Function for display records which are retrived from database.
 //
 // {
@@ -790,7 +792,7 @@ function showRecordsListByLevel(){
 
 
 function showSingleRecord(){
-    $("#results").html('');
+    $("#index4Results").html('');
 
     db.transaction(function (tx) {
 
@@ -805,12 +807,14 @@ function showSingleRecord(){
                 var spellNameString = item['name'];
                 var spellNameStringSplit = spellNameString.split(" ");
 
-                var linkeditdelete = '<li><a href="index4.html?name='+item['name']+'">'+item['name']+'<span class="spellSortListsSpanSpan">'+item['level']+'</span><span class="spellSortListsSpan">Lvl: </span></a></li>';
+                var linkeditdelete = '<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="a" data-mini="true" data-filtertext='+spellNameStringSplit+'><h3 class="ui-li-heading">'+item['name']+'<span class="spellSortListsSpanSpan">'+item['level']+'</span><span class="spellSortListsSpan">Lvl: </span></h3><ul data-role="listview" class="spellDescList"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
 
-                $("#results").append(linkeditdelete).trigger('create');
+                // $("#results").append(linkeditdelete);
+                $("#index4Results").append(linkeditdelete).trigger('create');
             }
-                $('#results').listview('refresh');
-
+            $('#index4Results').bind('pageinit', function() {
+                $('#index4Results').listview('refresh');
+            });
         });
 
     });
