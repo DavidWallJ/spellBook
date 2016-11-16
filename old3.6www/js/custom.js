@@ -154,17 +154,18 @@ $(document).on("pageshow","#index3",function(){ // When entering pagetwo
 
 $(document).on("pageshow","#index4",function(){ // When entering pagetwo
     //assign functions to buttons on page index3
-
+    
     $("#spellBookBackButton").click(dropTable);
 
     var spellName = getUrlParameter('name');
+
 
     selectAllStatement = 'SELECT * FROM spell WHERE name = "' + spellName + '"';
 
     // insertRecord();
     showSingleRecord();
 });
-// the issue isn't here the additional list item is getting added on after the sql injection!
+
 
 
 //drop table on back button to ensure no duplicate items

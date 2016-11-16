@@ -807,9 +807,9 @@ function showSingleRecord(){
                 var spellNameString = item['name'];
                 var spellNameStringSplit = spellNameString.split(" ");
 
-                var linkeditdelete = '<div data-role="collapsible" data-collapsed="false" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="a" data-mini="true" data-filtertext='+spellNameStringSplit+'><h3 class="ui-li-heading">'+item['name']+'<span class="spellSortListsSpanSpan">'+item['level']+'</span><span class="spellSortListsSpan">Lvl: </span></h3><ul data-role="listview" class="spellDescList"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
+                var linkeditdelete = '<div data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="a" data-mini="true" data-filtertext='+spellNameStringSplit+'><h3 class="ui-li-heading">'+item['name']+'<span class="spellSortListsSpanSpan">'+item['level']+'</span><span class="spellSortListsSpan">Lvl: </span></h3><ul data-role="listview" class="spellDescList"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
 
-
+                // $("#results").append(linkeditdelete);
                 $("#index4Results").append(linkeditdelete).trigger('create');
             }
             $('#index4Results').bind('pageinit', function() {
