@@ -14,7 +14,7 @@
 .spellSortListsSpanSpan {
     float: right;
     font-size: 11px;
-    line-height: 19px;
+    line-height: 18px;
     padding-right: 7px;
 }
 
@@ -239,8 +239,12 @@ a {
 .spellBookFullList li a  {
     background-color: #ffffff !important;
     border-color: #f6f6f6 !important;
+    font-size: 12px !important;
+    padding-top: 14px !important;
+}
 
-
+.spellBookFullList li a span {
+    padding-top: 0px !important;
 }
 
 .spellBookFullList {

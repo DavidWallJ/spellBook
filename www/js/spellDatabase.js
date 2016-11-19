@@ -16,14 +16,8 @@ var insertStatement = "INSERT INTO spell (_id,name,school,level,casting_time,ran
 
 var dropStatement = "DROP TABLE spell";
 
-// var sortByLevelStatement = "SELECT * FROM spell ORDER BY CASE WHEN level = 'Cantrip' THEN 0 WHEN level = 1 THEN 1 WHEN level = 2 THEN 2 WHEN level = 3 THEN 3 WHEN level = 4 THEN 4 WHEN level = 5 THEN 5 WHEN level = 6 THEN 6 WHEN level = 7 THEN 7 WHEN level = 8 THEN 8 WHEN level = 9 THEN 9 ELSE 20 END";
-
 var sortByNameStatement = "SELECT * FROM spell ORDER BY name";
 
-// var sortByRangeStatement = "SELECT * FROM spell ORDER BY CASE WHEN range = 'Special' THEN 0 WHEN range = 'Unlimited' THEN 1 WHEN range = '500 miles' THEN 5 WHEN range = 'Self (5-mile radius)' THEN 5 WHEN range = '1 mile' THEN 10 WHEN range = 'Sight' THEN 15 WHEN range = '500 feet' THEN 20 WHEN range = '300 feet' THEN 25 WHEN range = '150 feet' THEN 30 WHEN range = '120 feet' THEN 35 WHEN range = '100 feet' THEN 40 WHEN range = 'Self (100-foot line)' THEN 45 WHEN range = '90 feet' THEN 50 WHEN range = '60 feet' THEN 55 WHEN range = 'Self (60 foot cone)' THEN 60 WHEN range = 'Self (60-foot line)' THEN 65 WHEN range = 'Self (60-foot cone)' THEN 75 WHEN range = '30 feet' THEN 80 WHEN range = 'Self (30-foot radius)' THEN 85 WHEN range = 'Self (30-foot cone)' THEN 90 WHEN range = 'Self (15-foot cube)' THEN 95 WHEN range = 'Self (15-foot-radius)' THEN 100 WHEN range = 'Self (15-foot cone)' THEN 105 WHEN range = '10 feet' THEN 110 WHEN range = 'Self (10-foot radius)' THEN 115 WHEN range = '5 feet' THEN 120 WHEN range = 'Self (5-foot radius)' THEN 125 WHEN range = 'Touch' THEN 130 WHEN range = 'Self' THEN 135 ELSE 200 END";
-
-
-// var sortByDurationStatement = "SELECT * FROM spell ORDER BY CASE WHEN duration = 'Special' THEN 0 WHEN duration = 'Until dispelled' THEN 5 WHEN duration = 'Until dispelled or triggered' THEN 7 WHEN duration = '30 days' THEN 10 WHEN duration = '10 days' THEN 15 WHEN duration = '7 days' THEN 20 WHEN duration = '1 day' THEN 25 WHEN duration = 'CON, up to 1 day' THEN 27 WHEN duration = '24 hours' THEN 30 WHEN duration = 'CON, up to 24 hours' THEN 35 WHEN duration = '8 hours' THEN 40 WHEN duration = 'CON, up to 8 hours' THEN 55 WHEN duration = 'Up to 8 hours' THEN 50 WHEN duration = 'CON, up to 2 hours' THEN 58 WHEN duration = '1 hour' THEN 60 WHEN duration = 'Instantaneous or 1 hour' THEN 62 WHEN duration = 'CON, up to 1 hour' THEN 68 WHEN duration = 'Up to 1 hour' THEN 65 WHEN duration = '10 minutes' THEN 70 WHEN duration = 'CON, up to 10 minutes' THEN 75 WHEN duration = '1 minute' THEN 85 WHEN duration = 'CON, up to 1 minute' THEN 80 WHEN duration = 'Up to 1 minute' THEN 87 WHEN duration = 'CON, up to 6 rounds' THEN 88 WHEN duration = '1 round' THEN 90 WHEN duration = 'CON, up to 1 round' THEN 92 WHEN duration = 'Instantaneous' THEN 95 ELSE 200 END";
 
 var db = openDatabase("AddressBook", "1.0", "Address Book", 200000);  // Open SQLite Database
 
@@ -76,7 +70,7 @@ function initDatabase()  // Function Call When Page is ready.
 function createTable()  // Function for Create Table in SQLite.
 
 {
-
+    alert("table created");
     db.transaction(function (tx) {
         tx.executeSql("DROP TABLE IF EXISTS spell");
         tx.executeSql(createStatement, [], showRecords, onError); });
@@ -87,6 +81,7 @@ function insertRecord() // Get value from Input and insert record . Function Cal
 
 {
 
+        alert("records created");
         db.transaction(function (tx) {
 
         tx.executeSql("INSERT INTO spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard) VALUES (1,'Abi-Dalzim''s Horrid Wilting','8th-level necromancy',8,'1 action','150 feet','V, S, M (a bit of sponge)','Instantaneous','You draw the moisture from every creature in a 30-foot cube centered on a point you choose within range. Each creature in that area must make a Constitution saving throw. Constructs and undead aren''t affected, and plants and water elementals make this saving throw with disadvantage. A creature takes 10d8 necrotic damage on a failed save, or half as much damage on a successful one.','-','ee 15',0,0,0,0,0,0,1,0,1)");
@@ -498,7 +493,7 @@ function insertRecord() // Get value from Input and insert record . Function Cal
         //  alert('db populated');
 
         //tx.executeSql(SQL Query Statement,[ Parameters ] , Sucess Result Handler Function, Error Result Handler Function );
-
+    
 }
 
 // function deleteRecord(id) // Get id of record . Function Call when Delete Button Click..
@@ -530,7 +525,7 @@ function insertRecord() // Get value from Input and insert record . Function Cal
 function dropTable() // Function Call when Drop Button Click.. Talbe will be dropped from database.
 
 {
-
+    alert("table dropped");
     db.transaction(function (tx) { tx.executeSql(dropStatement, [], showRecords, onError); });
 
     // resetForm();
@@ -809,7 +804,6 @@ function showSingleRecord(){
 
                 var linkeditdelete = '<div data-collapsed="false" data-role="collapsible" data-collapsed-icon="arrow-d" data-expanded-icon="arrow-u" data-iconpos="right" data-theme="a" data-content-theme="a" data-mini="true" data-filtertext='+spellNameStringSplit+'><h3 class="ui-li-heading">'+item['name']+'<span class="spellSortListsSpanSpan">'+item['level']+'</span><span class="spellSortListsSpan">Lvl: </span></h3><ul data-role="listview" class="spellDescList"><li>School: '+item['school']+'</li><li>Level: '+item['level']+'</li><li>Casting Time: '+item['casting_time']+'</li><li>Range: '+item['range']+'</li><li>Duration: '+item['duration']+'</li></ul><p class="inset">'+item['description']+'</p><p class="inset">Components: '+item['components']+' </p></div>';
 
-                // $("#results").append(linkeditdelete);
                 $("#index4Results").append(linkeditdelete).trigger('create');
             }
             $('#index4Results').bind('pageinit', function() {

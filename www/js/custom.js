@@ -34,33 +34,36 @@ function getUrlParameter(sParam) {
 
 $(document).on("pageshow","#main",function(){
 
-setTimeout(
-  function()
-  {
-  $('#spin0').attr('value',localStorage.lvl0Value);
-  $('#spin1').attr('value',localStorage.lvl1Value);
-  $('#spin2').attr('value',localStorage.lvl2Value);
-  $('#spin3').attr('value',localStorage.lvl3Value);
-  $('#spin4').attr('value',localStorage.lvl4Value);
-  $('#spin5').attr('value',localStorage.lvl5Value);
-  $('#spin6').attr('value',localStorage.lvl6Value);
-  $('#spin7').attr('value',localStorage.lvl7Value);
-  $('#spin8').attr('value',localStorage.lvl8Value);
-  $('#spin9').attr('value',localStorage.lvl9Value);
+    // insertRecord();
 
-  $('#spinSet0').attr('value',localStorage.lvl0MaxValue);
-  $('#spinSet1').attr('value',localStorage.lvl1MaxValue);
-  $('#spinSet2').attr('value',localStorage.lvl2MaxValue);
-  $('#spinSet3').attr('value',localStorage.lvl3MaxValue);
-  $('#spinSet4').attr('value',localStorage.lvl4MaxValue);
-  $('#spinSet5').attr('value',localStorage.lvl5MaxValue);
-  $('#spinSet6').attr('value',localStorage.lvl6MaxValue);
-  $('#spinSet7').attr('value',localStorage.lvl7MaxValue);
-  $('#spinSet8').attr('value',localStorage.lvl8MaxValue);
-  $('#spinSet9').attr('value',localStorage.lvl9MaxValue);
+    setTimeout(
+      function()
+      {
+      $('#spin0').attr('value',localStorage.lvl0Value);
+      $('#spin1').attr('value',localStorage.lvl1Value);
+      $('#spin2').attr('value',localStorage.lvl2Value);
+      $('#spin3').attr('value',localStorage.lvl3Value);
+      $('#spin4').attr('value',localStorage.lvl4Value);
+      $('#spin5').attr('value',localStorage.lvl5Value);
+      $('#spin6').attr('value',localStorage.lvl6Value);
+      $('#spin7').attr('value',localStorage.lvl7Value);
+      $('#spin8').attr('value',localStorage.lvl8Value);
+      $('#spin9').attr('value',localStorage.lvl9Value);
 
-  }, 500);
-});
+      //beta panel code
+      // $('#spinSet0').attr('value',localStorage.lvl0MaxValue);
+      // $('#spinSet1').attr('value',localStorage.lvl1MaxValue);
+      // $('#spinSet2').attr('value',localStorage.lvl2MaxValue);
+      // $('#spinSet3').attr('value',localStorage.lvl3MaxValue);
+      // $('#spinSet4').attr('value',localStorage.lvl4MaxValue);
+      // $('#spinSet5').attr('value',localStorage.lvl5MaxValue);
+      // $('#spinSet6').attr('value',localStorage.lvl6MaxValue);
+      // $('#spinSet7').attr('value',localStorage.lvl7MaxValue);
+      // $('#spinSet8').attr('value',localStorage.lvl8MaxValue);
+      // $('#spinSet9').attr('value',localStorage.lvl9MaxValue);
+
+      }, 500);
+    });
 
 $(document).on("pageshow","#index2",function(){ // When entering pagetwo
 
@@ -77,14 +80,14 @@ $(document).on("pageshow","#index2",function(){ // When entering pagetwo
     var className = getUrlParameter('class');
     var classLevel = getUrlParameter('level');
 
-    if (classLevel != 'ALL'){
-        $('#btnOrderByLevel').hide();
-        $('#spellBookSortNav li').css({"width": "33.33333333%"});
-    }
+    // if (classLevel != 'ALL'){
+    //     $('#btnOrderByLevel').hide();
+    //     $('#spellBookSortNav li').css({"width": "33.33333333%"});
+    // }
 
-    if (classLevel === 'ALL'){
-        classLevel = '1 OR level = 2 OR level = 3 OR level = 4 OR level = 5 OR level = 6 OR level = 7 OR level = 8 OR level = 9';
-    }
+    // if (classLevel === 'ALL'){
+    //     classLevel = '1 OR level = 2 OR level = 3 OR level = 4 OR level = 5 OR level = 6 OR level = 7 OR level = 8 OR level = 9';
+    // }
 
     if (classLevel === 'Cantrip'){
         selectAllStatement = 'SELECT * FROM spell WHERE ' + className + ' = 1 AND level = "' + classLevel + '"';
@@ -134,8 +137,10 @@ $(document).on("pageshow","#index2",function(){ // When entering pagetwo
 
 $(document).on("pageshow","#index3",function(){ // When entering pagetwo
     //assign functions to buttons on page index3
+
     $("#btnOrderByLevel").click(showRecordsListByLevel);
     $("#btnOrderByName").click(showRecordsList);
+    $("#spellBookBackButton").click(dropTable);
 
     $('.spellSortNav ul li button').click(function(e) {
         $('.spellSortNav ul li button').removeClass('ui-btn-active');
@@ -183,6 +188,7 @@ $(window).on("navigate", function (event, data) {
 var panel = '<div data-role="panel" id="leftpanel" data-display="overlay" data-position-fixed="true" class="ui-panel ui-panel-position-left ui-panel-display-overlay ui-body-inherit ui-panel-fixed ui-panel-animate ui-panel-open"><ul data-role="listview" data-inset="false" class="ui-listview spellBookSpellCountHeader"><li data-role="list-divider" class="spellBookOrderBy ui-li-divider ui-bar-b ui-first-child ui-last-child">Spell Count:</li></ul><div><div class="spellBookCounterLabel"><label for="spin">Sorcery<br> Points:</label></div><div class="ui-field-contain spellBookCounter"><input type="number" data-role="spinbox" name="spin" id="spin0" value="0" min="0" max="100" /></div></div><div><div class="spellBookCounterLabel"><label for="spin">Level<br> One:</label></div><div class="ui-field-contain spellBookCounter"><input type="number" data-role="spinbox" name="spin" id="spin1" value="0" min="0" max="100" /></div><div><div class="spellBookCounterLabel"><label for="spin">Level<br> Two:</label></div><div class="ui-field-contain spellBookCounter"><input type="number" data-role="spinbox" name="spin" id="spin2" value="0" min="0" max="100" /></div><div><div class="spellBookCounterLabel"><label for="spin">Level<br> Three:</label></div><div class="ui-field-contain spellBookCounter"><input type="number" data-role="spinbox" name="spin" id="spin3" value="0" min="0" max="100" /></div><div><div class="spellBookCounterLabel"><label for="spin">Level<br> Four:</label></div><div class="ui-field-contain spellBookCounter"><input type="number" data-role="spinbox" name="spin" id="spin4" value="0" min="0" max="100" /></div></div><div><div class="spellBookCounterLabel"><label for="spin">Level<br> Five:</label></div><div class="ui-field-contain spellBookCounter"><input type="number" data-role="spinbox" name="spin" id="spin5" value="0" min="0" max="100" /></div></div><div><div class="spellBookCounterLabel"><label for="spin">Level<br> Six:</label></div><div class="ui-field-contain spellBookCounter"><input type="number" data-role="spinbox" name="spin" id="spin6" value="0" min="0" max="100" /></div></div><div><div class="spellBookCounterLabel"><label for="spin">Level<br> Seven:</label></div><div class="ui-field-contain spellBookCounter"><input type="number" data-role="spinbox" name="spin" id="spin7" value="0" min="0" max="100" /></div></div><div><div class="spellBookCounterLabel"><label for="spin">Level<br> Eight:</label></div><div class="ui-field-contain spellBookCounter"><input type="number" data-role="spinbox" name="spin" id="spin8" value="0" min="0" max="100" /></div></div><div class="spellBookLastCounter"><div class="spellBookCounterLabel"><label for="spin">Level<br> Nine:</label></div><div class="ui-field-contain spellBookCounter"><input type="number" data-role="spinbox" name="spin" id="spin9" value="0" min="0" max="100" /></div></div></div>';
 
 $(document).one('pagebeforecreate', function () {
+    
     $.mobile.pageContainer.prepend(panel);
     $("#leftpanel").panel().enhanceWithin();
 });
