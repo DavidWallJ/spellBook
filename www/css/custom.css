@@ -225,11 +225,12 @@ a {
     padding-bottom: 90px;
 }
 
-#spellCountTackMax {
+/*beta panel css*/
+/*#spellCountTackMax {
     color: white;
     text-decoration: none;
     padding-left: 167px;
-}
+}*/
 
 #spellBookAllSpellsButton {
     text-align: left;
@@ -245,7 +246,6 @@ a {
 .spellBookFullList {
     margin-top: 8px;
 }
-
 
 /*fix for ipad resolution*/
 @media (min-width: 28em) {
