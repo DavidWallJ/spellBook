@@ -70,7 +70,7 @@ function initDatabase()  // Function Call When Page is ready.
 function createTable()  // Function for Create Table in SQLite.
 
 {
-    alert("table created");
+    // alert("table created");
     db.transaction(function (tx) {
         tx.executeSql("DROP TABLE IF EXISTS spell");
         tx.executeSql(createStatement, [], showRecords, onError); });
@@ -81,7 +81,7 @@ function insertRecord() // Get value from Input and insert record . Function Cal
 
 {
 
-        alert("records created");
+        // alert("records created");
         db.transaction(function (tx) {
 
         tx.executeSql("INSERT INTO spell (_id,name,school,level,casting_time,range,components,duration,description,description_high,book,favorite,bard,cleric,druid,paladin,ranger,sorcerer,warlock,wizard) VALUES (1,'Abi-Dalzim''s Horrid Wilting','8th-level necromancy',8,'1 action','150 feet','V, S, M (a bit of sponge)','Instantaneous','You draw the moisture from every creature in a 30-foot cube centered on a point you choose within range. Each creature in that area must make a Constitution saving throw. Constructs and undead aren''t affected, and plants and water elementals make this saving throw with disadvantage. A creature takes 10d8 necrotic damage on a failed save, or half as much damage on a successful one.','-','ee 15',0,0,0,0,0,0,1,0,1)");
@@ -493,7 +493,7 @@ function insertRecord() // Get value from Input and insert record . Function Cal
         //  alert('db populated');
 
         //tx.executeSql(SQL Query Statement,[ Parameters ] , Sucess Result Handler Function, Error Result Handler Function );
-    
+
 }
 
 // function deleteRecord(id) // Get id of record . Function Call when Delete Button Click..
@@ -525,7 +525,7 @@ function insertRecord() // Get value from Input and insert record . Function Cal
 function dropTable() // Function Call when Drop Button Click.. Talbe will be dropped from database.
 
 {
-    alert("table dropped");
+    // alert("table dropped");
     db.transaction(function (tx) { tx.executeSql(dropStatement, [], showRecords, onError); });
 
     // resetForm();
