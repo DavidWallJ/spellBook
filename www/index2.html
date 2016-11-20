@@ -21,14 +21,15 @@
 		<!-- start of the all spells page -->
 		<div data-role="page" id="index2">
 
-			<nd2-include data-src="examples/fragments/panel.left.html"></nd2-include>
+			<nd2-include data-src="panel.left.html"></nd2-include>
 
 			<div data-role="panel" id="bottomsheet" data-animate="false" data-position="bottom" data-display="overlay">
-				<nd2-include data-src="examples/fragments/bottom.sheet.html"></nd2-include>
+				<nd2-include data-src="bottom.sheet.html"></nd2-include>
 			</div>
 
 			<div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
 				<a href="#main" id="spellBookBackButton" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay="1.2s"><i class="zmdi zmdi-arrow-back"></i></a>
+				<a href="#bottomsheet" class="spellBookSecondNavRightBtn ui-btn ui-btn-left wow fadeIn" data-wow-delay="1.2s"><i class="zmdi zmdi-face"></i></a>
 				<a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay="0.8s"><i class="zmdi zmdi-check"></i></a>
 				<h1 class="wow fadeIn" data-wow-delay="0.4s">5E Spellbook</h1>
 			</div>

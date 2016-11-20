@@ -258,3 +258,22 @@ a {
     width: 100%;
   }
 }
+
+
+/*bottom panel*/
+
+.spellBookVertSpin {
+    display: inline-block;
+    padding: 1%;
+    width: 47%;
+    border: none;
+}
+
+.headerButton {
+    float: left;
+    margin-right: 5px!important;
+}
+
+.spellBookSecondNavRightBtn {
+    margin-left: 32px !important;
+}
