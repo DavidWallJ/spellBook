@@ -285,3 +285,7 @@ a {
 .spellBookVertSpin .ui-input-text input {
     background-color: #ffffff;
 }
+
+.ui-title {
+    font-size: 18px !important;
+}
