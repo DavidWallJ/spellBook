@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Hello World</name>
+<widget id="com.phonegap.hellospellbook" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Hello Spell Book</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Hello Spell Book is a simple, light weight, Dungeons & Dragons 5th edition resource.  Easily find spell descriptions and stats.  Filter by class, level, duration, or even range.  The app also includes counters to keep track of spells cast, sorcery points used, current HP, and current AC.  100% free.  No advertisements.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="djkindread@gmail.com" href="http://phonegap.com">
+        kiNdred Design
     </author>
 
     <preference name="permissions" value="none"/>
