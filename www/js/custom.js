@@ -197,6 +197,29 @@ $(document).one('pagebeforecreate', function () {
     $("#leftpanel").panel().enhanceWithin();
 });
 
+//Populate class list
+
+$.fn.createClassSelectorList = function () {
+    for(i=0;i<10;i++){
+        $(".spellBookClassList").append("<p>...testing</p>");
+    }
+};
+
+//
+// for(i=0;i<10;i++){
+//     $('#spin' + i).on('change', function() {
+//       var currentValue = $(this).val();
+//       localStorage['lvl'+i+'Value'] = currentValue;
+//       $(this).attr('value', currentValue);
+//     });
+// }
+// <a href="index2.html?class=sorcerer&level=Cantrip">
+//     <div class="levelOneChip silver">
+//         <p class="levelOneChipHeading">0</p>
+//     </div>
+// </a>
+
+
 
 
 //bottom panel

@@ -269,11 +269,19 @@ a {
     border: none;
 }
 
-.headerButton {
+/*.headerButton {
     float: left;
     margin-right: 5px!important;
 }
 
 .spellBookSecondNavRightBtn {
     margin-left: 32px !important;
+}*/
+
+.spellBookVertSpin .ui-controlgroup-controls {
+    border-radius: 20px;
+}
+
+.spellBookVertSpin .ui-input-text input {
+    background-color: #ffffff;
 }

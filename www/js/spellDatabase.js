@@ -525,7 +525,7 @@ function insertRecord() // Get value from Input and insert record . Function Cal
 function dropTable() // Function Call when Drop Button Click.. Talbe will be dropped from database.
 
 {
-    alert("table dropped");
+    // alert("table dropped");
     db.transaction(function (tx) { tx.executeSql(dropStatement, [], showRecords, onError); });
 
     // resetForm();
