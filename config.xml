@@ -2,9 +2,9 @@
 <widget id="com.phonegap.hellospellbook" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Hello Spell Book</name>
     <description>
-        Hello Spell Book is a simple, light weight, Dungeons & Dragons 5th edition resource.  Easily find spell descriptions and stats.  Filter by class, level, duration, or even range.  The app also includes counters to keep track of spells cast, sorcery points used, current HP, and current AC.  100% free.  No advertisements.
+        Hello Spell Book is a simple, light weight, Dungeons and Dragons 5th edition resource.  Easily find spell descriptions and stats.  Filter by class, level, duration, or even range.  The app also includes counters to keep track of spells cast, sorcery points used, current HP, and current AC.  100% free.  No advertisements.
     </description>
-    <author email="djkindread@gmail.com" href="http://phonegap.com">
+    <author email="djkindread@gmail.com" href="#">
         kiNdred Design
     </author>
 
