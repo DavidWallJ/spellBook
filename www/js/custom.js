@@ -1,19 +1,3 @@
-
-// 'root.FS' is meant to give me the root of for the project regardless of wether it's local or not
-// function gotFS(fileSystem) {
-//    console.log("got filesystem");
-//    // save the file system for later access
-//    console.log(fileSystem.root.fullPath);
-//    window.rootFS = fileSystem.root;
-// }
-//
-// document.addEventListener('deviceready', function() {
-//    window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-//    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-// }, false);
-
-
-
 //to pull params from url on spelllist page
 function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -33,7 +17,6 @@ function getUrlParameter(sParam) {
 //
 
 $(document).on("pageshow","#main",function(){
-
     // insertRecord();
 
     setTimeout(
@@ -84,14 +67,6 @@ $(document).on("pageshow","#index2",function(){ // When entering pagetwo
     var className = getUrlParameter('class');
     var classLevel = getUrlParameter('level');
 
-    // if (classLevel != 'ALL'){
-    //     $('#btnOrderByLevel').hide();
-    //     $('#spellBookSortNav li').css({"width": "33.33333333%"});
-    // }
-
-    // if (classLevel === 'ALL'){
-    //     classLevel = '1 OR level = 2 OR level = 3 OR level = 4 OR level = 5 OR level = 6 OR level = 7 OR level = 8 OR level = 9';
-    // }
 
     if (classLevel === 'Cantrip'){
         selectAllStatement = 'SELECT * FROM spell WHERE ' + className + ' = 1 AND level = "' + classLevel + '"';
@@ -196,38 +171,3 @@ $(document).one('pagebeforecreate', function () {
     $.mobile.pageContainer.prepend(panelLeft);
     $("#leftpanel").panel().enhanceWithin();
 });
-
-//Populate class list
-
-$.fn.createClassSelectorList = function () {
-    for(i=0;i<10;i++){
-        $(".spellBookClassList").append("<p>...testing</p>");
-    }
-};
-
-//
-// for(i=0;i<10;i++){
-//     $('#spin' + i).on('change', function() {
-//       var currentValue = $(this).val();
-//       localStorage['lvl'+i+'Value'] = currentValue;
-//       $(this).attr('value', currentValue);
-//     });
-// }
-// <a href="index2.html?class=sorcerer&level=Cantrip">
-//     <div class="levelOneChip silver">
-//         <p class="levelOneChipHeading">0</p>
-//     </div>
-// </a>
-
-
-
-
-//bottom panel
-
-// var panelBottom = '<p>hello world</p>';
-//
-// $(document).one('pagebeforecreate', function () {
-//
-//     $.mobile.pageContainer.prepend(panelBottom);
-//     $("#bottomsheet").panel().enhanceWithin();
-// });

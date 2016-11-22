@@ -492,35 +492,10 @@ function insertRecord() // Get value from Input and insert record . Function Cal
          });
         //  alert('db populated');
 
-        //tx.executeSql(SQL Query Statement,[ Parameters ] , Sucess Result Handler Function, Error Result Handler Function );
 
 }
 
-// function deleteRecord(id) // Get id of record . Function Call when Delete Button Click..
-//
-// {
-//
-//     var iddelete = id.toString();
-//
-//     db.transaction(function (tx) { tx.executeSql(deleteStatement, [id], showRecords, onError); alert("Delete Sucessfully"); });
-//
-//     resetForm();
-//
-// }
-//
-// function updateRecord() // Get id of record . Function Call when Delete Button Click..
-//
-// {
-//
-//     var usernameupdate = $('input:text[id=username]').val().toString();
-//
-//     var useremailupdate = $('input:text[id=useremail]').val().toString();
-//
-//     var useridupdate = $("#id").val();
-//
-//     db.transaction(function (tx) { tx.executeSql(updateStatement, [usernameupdate, useremailupdate, Number(useridupdate)], loadAndReset, onError); });
-//
-// }
+
 
 function dropTable() // Function Call when Drop Button Click.. Talbe will be dropped from database.
 
@@ -536,41 +511,7 @@ function dropTable() // Function Call when Drop Button Click.. Talbe will be dro
 
 
 
-// function loadRecord(i) // Function for display records which are retrived from database.
-//
-// {
-//
-//     var item = dataset.item(i);
-//
-//     $("#username").val((item['username']).toString());
-//
-//     $("#useremail").val((item['useremail']).toString());
-//
-//     $("#id").val((item['id']).toString());
-//
-// }
-//
-// function resetForm() // Function for reset form input values.
-//
-// {
-//
-//     $("#username").val("");
-//
-//     $("#useremail").val("");
-//
-//     $("#id").val("");
-//
-// }
-//
-// function loadAndReset() //Function for Load and Reset...
-//
-// {
-//
-//     resetForm();
-//
-//     showRecords();
-//
-// }
+
 
 function onError(tx, error) // Function for Hendeling Error...
 
@@ -629,11 +570,6 @@ function showRecordsByLevel() // Function For Retrive data from Database Display
 
             for (var i = 0, item = null; i < dataset.length; i++) {
 
-                // lets change -1 to cantrip later
-                // item = dataset.item(i);
-                // if(dataset.item(i).level === -1) {
-                //     dataset.item(i).level = "Cantrip";
-                // }
                 item = dataset.item(i);
 
 
